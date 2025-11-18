@@ -1,0 +1,5877 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ClickHealthBackend",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/admin/login": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/pending-users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/approve-user/{email}": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/reject-user/{email}": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "default": ""
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string",
+                "default": ""
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string",
+                "default": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/admin/dashboard-summary": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardSummary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardSummary"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/google-login": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/google-callback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/error": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "reason",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Unknown error"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CampaignDashboard/dashboard": {
+      "get": {
+        "tags": [
+          "CampaignDashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CampaignDashboard/approved": {
+      "get": {
+        "tags": [
+          "CampaignDashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Campaigns": {
+      "post": {
+        "tags": [
+          "Campaigns"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCampaignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCampaignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCampaignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Campaigns/Fetch": {
+      "get": {
+        "tags": [
+          "Campaigns"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CampaignDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CampaignDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CampaignDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Campaigns/{id}": {
+      "get": {
+        "tags": [
+          "Campaigns"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Campaigns/{campaignId}/regional-performance-heatmap": {
+      "get": {
+        "tags": [
+          "Campaigns"
+        ],
+        "parameters": [
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/upload": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "MedicalName": {
+                    "type": "string"
+                  },
+                  "ContentLanguage": {
+                    "type": "string"
+                  },
+                  "ContentDescription": {
+                    "type": "string"
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "ExpiresOn": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Pdf": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Video": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "MedicalName": {
+                  "style": "form"
+                },
+                "ContentLanguage": {
+                  "style": "form"
+                },
+                "ContentDescription": {
+                  "style": "form"
+                },
+                "StartDate": {
+                  "style": "form"
+                },
+                "ExpiresOn": {
+                  "style": "form"
+                },
+                "Pdf": {
+                  "style": "form"
+                },
+                "Video": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/approved": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/rejected": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/pending": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/workflow": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "parameters": [
+          {
+            "name": "uploaderId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Content/update-status/{contentId}": {
+      "put": {
+        "tags": [
+          "Content"
+        ],
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newStatus",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ContentStatus"
+            }
+          },
+          {
+            "name": "notes",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HCP/content/assigned": {
+      "get": {
+        "tags": [
+          "HCP"
+        ],
+        "parameters": [
+          {
+            "name": "hcpUserId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HCP/patient-invites": {
+      "post": {
+        "tags": [
+          "HCP"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientInviteDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientInviteDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientInviteDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HCP/quizzes/{contentId}/complete": {
+      "post": {
+        "tags": [
+          "HCP"
+        ],
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizCompletionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizCompletionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizCompletionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HCPMetrics/total-onboarded": {
+      "get": {
+        "tags": [
+          "HCPMetrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/HCPMetrics/monthly-active": {
+      "get": {
+        "tags": [
+          "HCPMetrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/HCPMetrics/most-engaged": {
+      "get": {
+        "tags": [
+          "HCPMetrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/HCPMetrics/needs-attention": {
+      "get": {
+        "tags": [
+          "HCPMetrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/HCPMetrics/average-score": {
+      "get": {
+        "tags": [
+          "HCPMetrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketingContent/city-performance": {
+      "get": {
+        "tags": [
+          "MarketingContent"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Language",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityPerformanceDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityPerformanceDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityPerformanceDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketingContent/effectiveness": {
+      "get": {
+        "tags": [
+          "MarketingContent"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Language",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentEffectivenessDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentEffectivenessDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentEffectivenessDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MR/onboard/hcp": {
+      "post": {
+        "tags": [
+          "MR"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HcpOnboardDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HcpOnboardDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HcpOnboardDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MR/share-campaign": {
+      "post": {
+        "tags": [
+          "MR"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentShareDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentShareDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentShareDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MR/feedback": {
+      "post": {
+        "tags": [
+          "MR"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FieldFeedbackDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FieldFeedbackDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FieldFeedbackDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MR/dashboard/snapshot": {
+      "get": {
+        "tags": [
+          "MR"
+        ],
+        "parameters": [
+          {
+            "name": "mrUserId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/content": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "inviteCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Content"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Content"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Content"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Patient/consent": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientConsentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientConsentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientConsentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/engagement": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEngagementDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEngagementDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEngagementDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/quizzes/complete": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientQuizCompletionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientQuizCompletionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientQuizCompletionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/login-otp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/forgot-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/reset-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/send-otp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOtpRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOtpRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOtpRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/verify-otp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdminDashboardSummary": {
+        "type": "object",
+        "properties": {
+          "totalUsers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pendingApprovals": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activeDoctors": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recentUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserSummary"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonBinaryData": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "bytes": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "guidRepresentation": {
+            "$ref": "#/components/schemas/GuidRepresentation"
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "subType": {
+            "$ref": "#/components/schemas/BsonBinarySubType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonBinarySubType": {
+        "enum": [
+          "Binary",
+          "Function",
+          "OldBinary",
+          "UuidLegacy",
+          "UuidStandard",
+          "MD5",
+          "Encrypted",
+          "Column",
+          "Sensitive",
+          "UserDefined"
+        ],
+        "type": "string"
+      },
+      "BsonDateTime": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "millisecondsSinceEpoch": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "value": {
+            "type": "string",
+            "format": "date-time",
+            "deprecated": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonElement": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "$ref": "#/components/schemas/BsonValue"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonJavaScript": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonJavaScriptWithScope": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonMaxKey": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonMinKey": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonNull": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonRegularExpression": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "pattern": {
+            "type": "string",
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonSymbol": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonTimestamp": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "increment": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonType": {
+        "enum": [
+          "EndOfDocument",
+          "Double",
+          "String",
+          "Document",
+          "Array",
+          "Binary",
+          "Undefined",
+          "ObjectId",
+          "Boolean",
+          "DateTime",
+          "Null",
+          "RegularExpression",
+          "JavaScript",
+          "Symbol",
+          "JavaScriptWithScope",
+          "Int32",
+          "Timestamp",
+          "Int64",
+          "Decimal128",
+          "MaxKey",
+          "MinKey"
+        ],
+        "type": "string"
+      },
+      "BsonUndefined": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BsonValue": {
+        "type": "object",
+        "properties": {
+          "asBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "asBsonArray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonValue"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonBinaryData": {
+            "$ref": "#/components/schemas/BsonBinaryData"
+          },
+          "asBsonDateTime": {
+            "$ref": "#/components/schemas/BsonDateTime"
+          },
+          "asBsonDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "asBsonJavaScript": {
+            "$ref": "#/components/schemas/BsonJavaScript"
+          },
+          "asBsonJavaScriptWithScope": {
+            "$ref": "#/components/schemas/BsonJavaScriptWithScope"
+          },
+          "asBsonMaxKey": {
+            "$ref": "#/components/schemas/BsonMaxKey"
+          },
+          "asBsonMinKey": {
+            "$ref": "#/components/schemas/BsonMinKey"
+          },
+          "asBsonNull": {
+            "$ref": "#/components/schemas/BsonNull"
+          },
+          "asBsonRegularExpression": {
+            "$ref": "#/components/schemas/BsonRegularExpression"
+          },
+          "asBsonSymbol": {
+            "$ref": "#/components/schemas/BsonSymbol"
+          },
+          "asBsonTimestamp": {
+            "$ref": "#/components/schemas/BsonTimestamp"
+          },
+          "asBsonUndefined": {
+            "$ref": "#/components/schemas/BsonUndefined"
+          },
+          "asBsonValue": {
+            "$ref": "#/components/schemas/BsonValue"
+          },
+          "asByteArray": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asDecimal": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asDouble": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "asGuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "asInt32": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "asLocalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asInt64": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "asNullableBoolean": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "asNullableDecimal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableDecimal128": {
+            "$ref": "#/components/schemas/Decimal128"
+          },
+          "asNullableDouble": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt32": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableInt64": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asNullableObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asObjectId": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "asRegex": {
+            "$ref": "#/components/schemas/Regex"
+          },
+          "asString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "asUniversalTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "bsonType": {
+            "$ref": "#/components/schemas/BsonType"
+          },
+          "isBoolean": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonBinaryData": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonDocument": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScript": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonJavaScriptWithScope": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMaxKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonMinKey": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonNull": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonRegularExpression": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonSymbol": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonTimestamp": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isBsonUndefined": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDateTime": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isDecimal128": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDouble": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGuid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt32": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isInt64": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isObjectId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isString": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValidDateTime": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "rawValue": {
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Campaign": {
+        "type": "object",
+        "properties": {
+          "campaignId": {
+            "type": "string",
+            "nullable": true
+          },
+          "campaignCustomId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "therapy": {
+            "type": "string",
+            "nullable": true
+          },
+          "cities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "territories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CampaignStatus"
+          },
+          "createdByUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "targetMetrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsonElement"
+            },
+            "nullable": true
+          },
+          "contentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignDTO": {
+        "type": "object",
+        "properties": {
+          "campaignId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "therapy": {
+            "type": "string",
+            "nullable": true
+          },
+          "cities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "territories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdByUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "targetMetrics": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignStatus": {
+        "enum": [
+          "Draft",
+          "Active",
+          "Completed"
+        ],
+        "type": "string"
+      },
+      "CityPerformanceDTO": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCompletions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "engagementPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "languageMix": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Content": {
+        "type": "object",
+        "properties": {
+          "contentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contentCustomId": {
+            "type": "string",
+            "nullable": true
+          },
+          "therapy": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/ContentType"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "reviewDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "uploadedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ContentStatus"
+          },
+          "uploadedByUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploadedByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvedByUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvedByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "approverNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContentEffectivenessDTO": {
+        "type": "object",
+        "properties": {
+          "topPerformingAssets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentMetricsDTO"
+            },
+            "nullable": true
+          },
+          "underperformingContent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentMetricsDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContentMetricsDTO": {
+        "type": "object",
+        "properties": {
+          "contentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "contentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "completions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageDwellTimeMinutes": {
+            "type": "number",
+            "format": "double"
+          },
+          "shareRatePercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "performanceRating": {
+            "type": "string",
+            "nullable": true
+          },
+          "actionRecommendation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContentShareDto": {
+        "type": "object",
+        "properties": {
+          "mrUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "hcpUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "campaignId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContentStatus": {
+        "enum": [
+          "Pending",
+          "Approved",
+          "Rejected",
+          "Expired"
+        ],
+        "type": "string"
+      },
+      "ContentType": {
+        "enum": [
+          "PDF",
+          "Video"
+        ],
+        "type": "string"
+      },
+      "CreateCampaignRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "therapy": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "cities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "territories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdByUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DashboardDTO": {
+        "type": "object",
+        "properties": {
+          "activeCampaigns": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "campaignBreakdown": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalReach": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reachDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "doctorShares": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorSharesDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "completionRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "completionRateDetail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Decimal128": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "FieldFeedbackDto": {
+        "type": "object",
+        "properties": {
+          "mrUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ForgotPasswordRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuidRepresentation": {
+        "enum": [
+          "Unspecified",
+          "Standard",
+          "CSharpLegacy",
+          "JavaLegacy",
+          "PythonLegacy"
+        ],
+        "type": "string"
+      },
+      "HcpOnboardDto": {
+        "type": "object",
+        "properties": {
+          "mrUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "hcpName": {
+            "type": "string",
+            "nullable": true
+          },
+          "hcpEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "hcpPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "territory": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialty": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectId": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "machine": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "pid": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "increment": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "creationTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientConsentDto": {
+        "type": "object",
+        "properties": {
+          "inviteCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientEngagementDto": {
+        "type": "object",
+        "properties": {
+          "inviteCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "durationSeconds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "engagementType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientInviteDto": {
+        "type": "object",
+        "properties": {
+          "hcpUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "campaignId": {
+            "type": "string",
+            "nullable": true
+          },
+          "patientEmail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientQuizCompletionDto": {
+        "type": "object",
+        "properties": {
+          "inviteCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "contentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "quizResponses": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuizCompletionDto": {
+        "type": "object",
+        "properties": {
+          "hcpUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "quizResponses": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Regex": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/RegexOptions"
+          },
+          "rightToLeft": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "matchTimeout": {
+            "type": "string",
+            "format": "date-span",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegexOptions": {
+        "enum": [
+          "None",
+          "IgnoreCase",
+          "Multiline",
+          "ExplicitCapture",
+          "Compiled",
+          "Singleline",
+          "IgnorePatternWhitespace",
+          "RightToLeft",
+          "ECMAScript",
+          "CultureInvariant",
+          "NonBacktracking"
+        ],
+        "type": "string"
+      },
+      "RegistrationRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "specialty": {
+            "type": "string",
+            "nullable": true
+          },
+          "territory": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResetPasswordRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "otp": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOtpRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userCustomId": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "googleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "loginProvider": {
+            "type": "string",
+            "nullable": true
+          },
+          "isApproved": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "status": {
+            "$ref": "#/components/schemas/UserStatus"
+          },
+          "specialty": {
+            "type": "string",
+            "nullable": true
+          },
+          "territory": {
+            "type": "string",
+            "nullable": true
+          },
+          "totp": {
+            "type": "string",
+            "nullable": true
+          },
+          "totpGeneratedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "mustResetPassword": {
+            "type": "boolean"
+          },
+          "lastPasswordChangeAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "profilePicture": {
+            "type": "string",
+            "nullable": true
+          },
+          "googleAccessToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastLoginAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRole": {
+        "enum": [
+          "Marketing_Team",
+          "Medical_Team",
+          "HCP",
+          "Patient",
+          "Sales_Manager",
+          "Medical_Representative",
+          "Admin",
+          "Guest"
+        ],
+        "type": "string"
+      },
+      "UserStatus": {
+        "enum": [
+          "Pending",
+          "Approved",
+          "Rejected",
+          "Active"
+        ],
+        "type": "string"
+      },
+      "UserSummary": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "isApproved": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VerifyOtpRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "otp": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,915 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\nov_12_codes\\ClickHealthBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\dtos\\createcampaignrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:dtos\\createcampaignrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\implementations\\contentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\implementations\\contentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\interfaces\\icontentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\interfaces\\icontentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\campaigndashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\campaigndashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\implementations\\campaigndashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\implementations\\campaigndashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\implementations\\campaignrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\implementations\\campaignrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\dtos\\contenteffectivenessdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:dtos\\contenteffectivenessdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\marketingcontentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\marketingcontentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\interfaces\\icampaignrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\interfaces\\icampaignrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\campaignscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\campaignscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\campaigndashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\campaigndashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\interfaces\\icampaigndashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\interfaces\\icampaigndashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\interfaces\\icontentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\interfaces\\icontentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\contentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\contentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\campaignmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\campaignmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\dtos\\contentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:dtos\\contentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\enums\\contentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:enums\\contentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\interfaces\\icontentmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\interfaces\\icontentmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\campaign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\campaign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\contentmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\contentmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\interfaces\\icampaignassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\interfaces\\icampaignassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\interfaces\\icampaigndashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\interfaces\\icampaigndashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\interfaces\\icampaignmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\interfaces\\icampaignmetricsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\clickhealthbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:clickhealthbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\implementations\\hcprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\implementations\\hcprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\interfaces\\ihcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\interfaces\\ihcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\contentapproval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\contentapproval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\dtos\\registrationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:dtos\\registrationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\hcpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\hcpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\controllers\\contentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:controllers\\contentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\hcpactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\hcpactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\services\\implementations\\hcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:services\\implementations\\hcpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\enums\\hcpactivitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:enums\\hcpactivitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\mractivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\mractivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\enums\\mractivitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:enums\\mractivitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\models\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:models\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\dtos\\contentmetricsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:dtos\\contentmetricsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\data\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:data\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:data\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|d:\\nov_12_codes\\clickhealthbackend\\.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}",
+      "RelativeMoniker": "D:0:0:{C3C0CD78-4503-AE95-20BE-EFC935E99294}|ClickHealthBackend.csproj|solutionrelative:.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CampaignDashboardController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\CampaignDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CampaignDashboardController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\CampaignDashboardController.cs",
+              "RelativeToolTip": "Controllers\\CampaignDashboardController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwCMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T05:41:41.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CampaignDashboardRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\CampaignDashboardRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\CampaignDashboardRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\CampaignDashboardRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\CampaignDashboardRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:15:56.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IContentRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\IContentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IContentRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\IContentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IContentRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAApwCcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:40:50.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContentRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\ContentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ContentRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\ContentRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ContentRepository.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAmwIUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:42:51.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateCampaignRequest.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\CreateCampaignRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateCampaignRequest.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\CreateCampaignRequest.cs",
+              "RelativeToolTip": "DTOs\\CreateCampaignRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T05:46:32.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CampaignRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\CampaignRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\CampaignRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\CampaignRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\CampaignRepository.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAqwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:17:16.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContentEffectivenessDTO.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentEffectivenessDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ContentEffectivenessDTO.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentEffectivenessDTO.cs",
+              "RelativeToolTip": "DTOs\\ContentEffectivenessDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:38:29.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MarketingContentController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\MarketingContentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MarketingContentController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\MarketingContentController.cs",
+              "RelativeToolTip": "Controllers\\MarketingContentController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAmwCUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:24:57.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICampaignRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICampaignRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICampaignRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:16:27.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CampaignsController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\CampaignsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CampaignsController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\CampaignsController.cs",
+              "RelativeToolTip": "Controllers\\CampaignsController.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:17:36.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAiwEIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T06:03:46.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CampaignDashboardService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\CampaignDashboardService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CampaignDashboardService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\CampaignDashboardService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CampaignDashboardService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:53:39.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICampaignDashboardService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\ICampaignDashboardService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICampaignDashboardService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\ICampaignDashboardService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICampaignDashboardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:53:33.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IContentService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IContentService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IContentService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IContentService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IContentService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T06:31:16.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ContentService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\ContentService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ContentService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\ContentService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ContentService.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAiwAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T04:36:00.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CampaignMetricsService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\CampaignMetricsService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CampaignMetricsService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\CampaignMetricsService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CampaignMetricsService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:15:10.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Campaign.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Campaign.cs",
+              "RelativeDocumentMoniker": "Models\\Campaign.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Campaign.cs",
+              "RelativeToolTip": "Models\\Campaign.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:12:39.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IContentMetricsService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IContentMetricsService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IContentMetricsService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IContentMetricsService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IContentMetricsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T05:13:59.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ContentStatus.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\ContentStatus.cs",
+              "RelativeDocumentMoniker": "Enums\\ContentStatus.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\ContentStatus.cs",
+              "RelativeToolTip": "Enums\\ContentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T05:40:50.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ContentDTO.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ContentDTO.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentDTO.cs",
+              "RelativeToolTip": "DTOs\\ContentDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T05:47:08.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Content.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Content.cs",
+              "RelativeDocumentMoniker": "Models\\Content.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Content.cs",
+              "RelativeToolTip": "Models\\Content.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAswDsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:26:22.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ContentMetricsService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\ContentMetricsService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ContentMetricsService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\ContentMetricsService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ContentMetricsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:40:25.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ICampaignAssetRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignAssetRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICampaignAssetRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignAssetRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICampaignAssetRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:16:19.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ICampaignDashboardRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignDashboardRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICampaignDashboardRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\ICampaignDashboardRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICampaignDashboardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:16:08.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ICampaignMetricsService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\ICampaignMetricsService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICampaignMetricsService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\ICampaignMetricsService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICampaignMetricsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:53:32.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ClickHealthBackend.csproj",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\ClickHealthBackend.csproj",
+              "RelativeDocumentMoniker": "ClickHealthBackend.csproj",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\ClickHealthBackend.csproj",
+              "RelativeToolTip": "ClickHealthBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-14T12:28:10.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\UserService.cs",
+              "RelativeToolTip": "Services\\Implementations\\UserService.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAYwMAAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T10:52:56.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HCPRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\HCPRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\HCPRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\HCPRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\HCPRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:24:50.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAEwBIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:16:57.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\UserRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwv0EAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:11:46.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T07:00:34.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IHCPService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IHCPService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IHCPService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Interfaces\\IHCPService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IHCPService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:28:11.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "Models\\Patient.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\Patient.cs",
+              "RelativeToolTip": "Models\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:14:41.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ContentApproval.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\ContentApproval.cs",
+              "RelativeDocumentMoniker": "Models\\ContentApproval.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\ContentApproval.cs",
+              "RelativeToolTip": "Models\\ContentApproval.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T10:09:39.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "RegistrationRequestDto.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\RegistrationRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\RegistrationRequestDto.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\RegistrationRequestDto.cs",
+              "RelativeToolTip": "DTOs\\RegistrationRequestDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:05:40.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "HCPController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\HCPController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HCPController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\HCPController.cs",
+              "RelativeToolTip": "Controllers\\HCPController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:04:58.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:32:30.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PatientController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "Controllers\\PatientController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:27:37.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\UserRole.cs",
+              "RelativeDocumentMoniker": "Enums\\UserRole.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\UserRole.cs",
+              "RelativeToolTip": "Enums\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:31:16.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAA8wAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T05:46:29.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAArwCUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T05:46:26.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ContentController.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\ContentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContentController.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Controllers\\ContentController.cs",
+              "RelativeToolTip": "Controllers\\ContentController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAuwHcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:39:31.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "HCPActivity.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\HCPActivity.cs",
+              "RelativeDocumentMoniker": "Models\\HCPActivity.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\HCPActivity.cs",
+              "RelativeToolTip": "Models\\HCPActivity.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvw8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:15:31.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "HCPService.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\HCPService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\HCPService.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Services\\Implementations\\HCPService.cs",
+              "RelativeToolTip": "Services\\Implementations\\HCPService.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAIwHUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:07:23.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "HCPActivityType.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\HCPActivityType.cs",
+              "RelativeDocumentMoniker": "Enums\\HCPActivityType.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\HCPActivityType.cs",
+              "RelativeToolTip": "Enums\\HCPActivityType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:21:19.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MRActivity.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\MRActivity.cs",
+              "RelativeDocumentMoniker": "Models\\MRActivity.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\MRActivity.cs",
+              "RelativeToolTip": "Models\\MRActivity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:14:39.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MRActivityType.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\MRActivityType.cs",
+              "RelativeDocumentMoniker": "Enums\\MRActivityType.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Enums\\MRActivityType.cs",
+              "RelativeToolTip": "Enums\\MRActivityType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:31:15.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "Models\\JwtSettings.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Models\\JwtSettings.cs",
+              "RelativeToolTip": "Models\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:15:33.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ContentMetricsDTO.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentMetricsDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ContentMetricsDTO.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\DTOs\\ContentMetricsDTO.cs",
+              "RelativeToolTip": "DTOs\\ContentMetricsDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:48:44.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwCEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-12T06:11:34.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-12T05:31:01.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "MongoDbContext.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Data\\MongoDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\MongoDbContext.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Data\\MongoDbContext.cs",
+              "RelativeToolTip": "Data\\MongoDbContext.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA6wEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:14:39.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "MongoDbSettings.cs",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\Data\\MongoDbSettings.cs",
+              "RelativeDocumentMoniker": "Data\\MongoDbSettings.cs",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\Data\\MongoDbSettings.cs",
+              "RelativeToolTip": "Data\\MongoDbSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:15:01.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": ".editorconfig",
+              "DocumentMoniker": "D:\\nov_12_codes\\ClickHealthBackend\\.editorconfig",
+              "RelativeDocumentMoniker": ".editorconfig",
+              "ToolTip": "D:\\nov_12_codes\\ClickHealthBackend\\.editorconfig",
+              "RelativeToolTip": ".editorconfig",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-12T06:52:34.747Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
