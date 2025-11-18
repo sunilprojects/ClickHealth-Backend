@@ -1,0 +1,6 @@
+@ClickHealthBackend_HostAddress = http://localhost:5074
+
+GET {{ClickHealthBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
