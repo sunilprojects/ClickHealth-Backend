@@ -37,11 +37,9 @@ namespace ClickHealthBackend.Repositories.Interfaces
         Task<List<ContentMetricsDTO>> GetContentMetricsAsync(PerformanceFilterDTO filter);
         Task<List<CityPerformanceDTO>> GetCityPerformanceAsync(PerformanceFilterDTO filter);
         Task<List<Content>> GetAllContentAsync();
-<<<<<<< HEAD
-=======
+
         Task<List<Content>> GetApprovedContentAsync();
 
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     }
 }
 

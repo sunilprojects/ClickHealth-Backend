@@ -1,8 +1,5 @@
 ﻿using ClickHealthBackend.DTOs;
-<<<<<<< HEAD
-=======
 using ClickHealthBackend.Enums;
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
 using ClickHealthBackend.Services.Interfaces;
@@ -21,34 +18,29 @@ namespace ClickHealthBackend.Controllers
     [ApiController]
     public class CampaignsController : ControllerBase
     {
-<<<<<<< HEAD
         private readonly ICampaignRepository _campaignRepo;
         private readonly ICampaignMetricsService _metricsService;
-
-        public CampaignsController(ICampaignRepository campaignRepo, ICampaignMetricsService metricsService)
-        {
-            _campaignRepo = campaignRepo;
-            _metricsService = metricsService;
-=======
+        private readonly IContentRepository _contentRepository;
         private readonly IMongoCollection<Content> _content;
-        private readonly ICampaignRepository _campaignRepo;
-        private readonly ICampaignMetricsService _metricsService;
-        private readonly IContentRepository _contentRepoisitory;
 
-        public CampaignsController(ICampaignRepository campaignRepo, ICampaignMetricsService metricsService, IContentRepository _contentRepo)
+        public CampaignsController(
+            ICampaignRepository campaignRepo,
+            ICampaignMetricsService metricsService,
+            IContentRepository contentRepo)
         {
             _campaignRepo = campaignRepo;
             _metricsService = metricsService;
-            _contentRepoisitory = _contentRepo;
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
+            _contentRepository = contentRepo;
+
+            // optional: if needed for content validation
+            _content = _contentRepository?.GetContentCollection();
         }
 
-        // --- DTO Mapping Helper (Maps DB Model to Clean DTO) ---
+        // --- DTO Mapping Helper ---
         private CampaignDTO MapToDto(Campaign campaign)
         {
             if (campaign == null) return null;
 
-            // Convert BsonDocument to Dictionary<string, object>
             Dictionary<string, object> targetMetrics = null;
             if (campaign.TargetMetrics != null)
             {
@@ -61,6 +53,7 @@ namespace ClickHealthBackend.Controllers
             return new CampaignDTO
             {
                 CampaignId = campaign.CampaignId,
+                CampaignCustomId = campaign.CampaignCustomId,
                 Name = campaign.Name,
                 Therapy = campaign.Therapy,
                 Cities = campaign.Cities,
@@ -74,58 +67,44 @@ namespace ClickHealthBackend.Controllers
             };
         }
 
-        // ✅ Helper: Convert BsonValue to C# object safely
         private object ConvertBsonValue(BsonValue value)
         {
             if (value == null || value.IsBsonNull) return null;
 
-            switch (value.BsonType)
+            return value.BsonType switch
             {
-                case BsonType.String:
-                    return value.AsString;
-                case BsonType.Int32:
-                    return value.AsInt32;
-                case BsonType.Int64:
-                    return value.AsInt64;
-                case BsonType.Double:
-                    return value.AsDouble;
-                case BsonType.Boolean:
-                    return value.AsBoolean;
-                case BsonType.DateTime:
-                    return value.ToUniversalTime();
-                case BsonType.ObjectId:
-                    return value.AsObjectId.ToString();
-                case BsonType.Array:
-                    return value.AsBsonArray.Select(ConvertBsonValue).ToList();
-                case BsonType.Document:
-                    return value.AsBsonDocument.ToDictionary(e => e.Name, e => ConvertBsonValue(e.Value));
-                default:
-                    return value.ToString();
-            }
+                BsonType.String => value.AsString,
+                BsonType.Int32 => value.AsInt32,
+                BsonType.Int64 => value.AsInt64,
+                BsonType.Double => value.AsDouble,
+                BsonType.Boolean => value.AsBoolean,
+                BsonType.DateTime => value.ToUniversalTime(),
+                BsonType.ObjectId => value.AsObjectId.ToString(),
+                BsonType.Array => value.AsBsonArray.Select(ConvertBsonValue).ToList(),
+                BsonType.Document => value.AsBsonDocument.ToDictionary(e => e.Name, e => ConvertBsonValue(e.Value)),
+                _ => value.ToString(),
+            };
         }
+
         private async Task<string> GenerateCampaignCustomId()
         {
             return await _campaignRepo.GenerateCampaignCustomIdAsync();
         }
-<<<<<<< HEAD
 
-
-        // --- Create Campaign ---
-        [HttpPost]
-=======
-        [HttpPost]
-        public async Task<Campaign> CreateCampaignAsync(CreateCampaignRequest request)
+        // --------------------------------------------------------------------------------
+        // ✔ Version 1: Create Campaign (Divya’s version — validates content approval)
+        // --------------------------------------------------------------------------------
+        [HttpPost("create-v2")]
+        public async Task<ActionResult<Campaign>> CreateCampaignAsync(CreateCampaignRequest request)
         {
-            // 1. Validate content is approved
             var filter = Builders<Content>.Filter.In(c => c.ContentId, request.ContentIds)
-                         & Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
+                        & Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
 
             var approvedContents = await _content.Find(filter).ToListAsync();
 
             if (approvedContents.Count != request.ContentIds.Count)
-                throw new Exception("Some selected content items are not approved!");
+                return BadRequest("Some selected content items are not approved!");
 
-            // 2. Create Campaign
             Campaign campaign = new Campaign
             {
                 Name = request.Name,
@@ -137,44 +116,31 @@ namespace ClickHealthBackend.Controllers
                 EndDate = request.EndDate,
                 Status = CampaignStatus.Active,
                 CreatedByUserId = request.CreatedByUserId,
-                ContentIds = request.ContentIds,
+                ContentIds = request.ContentIds
             };
 
-            //await _campaignCollection.InsertOneAsync(campaign);
-            await _campaignRepo.CreateCampaignAsync(campaign);
-            return campaign;
+            var created = await _campaignRepo.CreateCampaignAsync(campaign);
+            return Ok(created);
         }
 
-
-        // --- Create Campaign ---
-       /* [HttpPost]
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
+        // --------------------------------------------------------------------------------
+        // ✔ Version 2: Original Create Campaign (with TargetMetrics support)
+        // --------------------------------------------------------------------------------
+        [HttpPost]
         public async Task<IActionResult> CreateCampaign([FromBody] CreateCampaignDTO campaignDto)
         {
-            // Get User ID (best practice)
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-            {
-                // Placeholder for unauthenticated users
-                userId = ObjectId.GenerateNewId().ToString();
-            }
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                              ?? ObjectId.GenerateNewId().ToString();
 
-            // Convert TargetMetrics DTO (Dictionary<string, object>) to BsonDocument
             var bsonTargetMetrics = new BsonDocument();
             if (campaignDto.TargetMetrics != null)
             {
                 foreach (var kvp in campaignDto.TargetMetrics)
                 {
-                    // Handle JsonElement (from System.Text.Json deserialization)
                     if (kvp.Value is JsonElement jsonElement)
-                    {
-                        BsonValue bsonValue = ConvertJsonElementToBsonValue(jsonElement);
-                        bsonTargetMetrics.Add(kvp.Key, bsonValue);
-                    }
+                        bsonTargetMetrics.Add(kvp.Key, ConvertJsonElementToBsonValue(jsonElement));
                     else if (kvp.Value != null)
-                    {
                         bsonTargetMetrics.Add(kvp.Key, BsonValue.Create(kvp.Value));
-                    }
                 }
             }
 
@@ -195,20 +161,17 @@ namespace ClickHealthBackend.Controllers
 
             var createdCampaign = await _campaignRepo.CreateCampaignAsync(newCampaign);
 
-            return CreatedAtAction(nameof(GetCampaign), new { id = createdCampaign.CampaignId }, MapToDto(createdCampaign));
+            return CreatedAtAction(nameof(GetCampaign),
+                new { id = createdCampaign.CampaignId },
+                MapToDto(createdCampaign));
         }
-<<<<<<< HEAD
 
-=======
-*/
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
         // --- Get All Campaigns ---
         [HttpGet("Fetch")]
         public async Task<ActionResult<List<CampaignDTO>>> GetAllCampaigns()
         {
             var campaigns = await _campaignRepo.GetAllCampaignsAsync();
-            var campaignDtos = campaigns.Select(MapToDto).ToList();
-            return Ok(campaignDtos);
+            return Ok(campaigns.Select(MapToDto).ToList());
         }
 
         // --- Get Campaign by ID ---
@@ -216,58 +179,43 @@ namespace ClickHealthBackend.Controllers
         public async Task<ActionResult<CampaignDTO>> GetCampaign(string id)
         {
             var campaign = await _campaignRepo.GetCampaignByIdAsync(id);
-            if (campaign == null)
-                return NotFound();
-
-            return Ok(MapToDto(campaign));
+            return campaign == null ? NotFound() : Ok(MapToDto(campaign));
         }
 
-        // --- Territory Regional Performance HeatMap API ---
+        // --- Territory HeatMap Metrics ---
         [HttpGet("{campaignId}/regional-performance-heatmap")]
         public async Task<IActionResult> GetRegionalPerformanceHeatMap(string campaignId)
         {
             var heatmapData = await _metricsService.GetRegionalPerformanceHeatMapAsync(campaignId);
+
             if (heatmapData == null || heatmapData.Count == 0)
-            {
                 return NotFound($"No metrics found for campaign ID: {campaignId}");
-            }
+
             return Ok(heatmapData);
         }
 
-        // --- Helper: Convert JsonElement to BsonValue ---
+        // Convert JsonElement → BsonValue
         private BsonValue ConvertJsonElementToBsonValue(JsonElement element)
         {
-            switch (element.ValueKind)
+            return element.ValueKind switch
             {
-                case JsonValueKind.String:
-                    return new BsonString(element.GetString());
-                case JsonValueKind.Number:
-                    if (element.TryGetInt32(out int intValue)) return new BsonInt32(intValue);
-                    if (element.TryGetInt64(out long longValue)) return new BsonInt64(longValue);
-                    return new BsonDouble(element.GetDouble());
-                case JsonValueKind.True:
-                case JsonValueKind.False:
-                    return new BsonBoolean(element.GetBoolean());
-                case JsonValueKind.Null:
-                case JsonValueKind.Undefined:
-                    return BsonNull.Value;
-                case JsonValueKind.Object:
-                    var doc = new BsonDocument();
-                    foreach (var property in element.EnumerateObject())
-                    {
-                        doc.Add(property.Name, ConvertJsonElementToBsonValue(property.Value));
-                    }
-                    return doc;
-                case JsonValueKind.Array:
-                    var arr = new BsonArray();
-                    foreach (var item in element.EnumerateArray())
-                    {
-                        arr.Add(ConvertJsonElementToBsonValue(item));
-                    }
-                    return arr;
-                default:
-                    return BsonNull.Value;
-            }
+                JsonValueKind.String => new BsonString(element.GetString()),
+                JsonValueKind.Number =>
+                    element.TryGetInt32(out int i) ? new BsonInt32(i) :
+                    element.TryGetInt64(out long l) ? new BsonInt64(l) :
+                    new BsonDouble(element.GetDouble()),
+                JsonValueKind.True => new BsonBoolean(true),
+                JsonValueKind.False => new BsonBoolean(false),
+                JsonValueKind.Null => BsonNull.Value,
+                JsonValueKind.Undefined => BsonNull.Value,
+                JsonValueKind.Object => new BsonDocument(
+                    element.EnumerateObject().ToDictionary(
+                        p => p.Name,
+                        p => ConvertJsonElementToBsonValue(p.Value))),
+                JsonValueKind.Array => new BsonArray(
+                    element.EnumerateArray().Select(ConvertJsonElementToBsonValue)),
+                _ => BsonNull.Value,
+            };
         }
     }
 }

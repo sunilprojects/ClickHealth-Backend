@@ -346,3 +346,15 @@ D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
 D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
 D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
 D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.sourcelink.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb

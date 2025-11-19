@@ -4,6 +4,8 @@
     public class CampaignDTO
     {
         public string CampaignId { get; set; }
+
+        public string CampaignCustomId { get; set; }
         public string Name { get; set; }
         public string Therapy { get; set; }
         public List<string> Cities { get; set; }

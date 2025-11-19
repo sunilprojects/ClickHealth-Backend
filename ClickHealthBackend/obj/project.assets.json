@@ -2729,23 +2729,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DIVYA\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\nov_12_codes\\ClickHealthBackend\\ClickHealthBackend.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ClickHealth-Backend\\ClickHealthBackend\\ClickHealthBackend.csproj",
       "projectName": "ClickHealthBackend",
-      "projectPath": "D:\\nov_12_codes\\ClickHealthBackend\\ClickHealthBackend.csproj",
-      "packagesPath": "C:\\Users\\DIVYA\\.nuget\\packages\\",
-      "outputPath": "D:\\nov_12_codes\\ClickHealthBackend\\obj\\",
+      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ClickHealth-Backend\\ClickHealthBackend\\ClickHealthBackend.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ClickHealth-Backend\\ClickHealthBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\DIVYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2754,6 +2754,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
