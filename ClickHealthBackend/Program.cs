@@ -63,6 +63,11 @@ builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSet
 // 5️⃣ Repositories & Services
 // --------------------------------------------------------------------
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+<<<<<<< HEAD
+=======
+builder.Services.AddScoped<IContentRepository, ContentRepository>();
+builder.Services.AddScoped<IContentService, ContentService>();
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IContentRepository, ContentRepository>();
 builder.Services.AddScoped<IContentService, ContentService>();

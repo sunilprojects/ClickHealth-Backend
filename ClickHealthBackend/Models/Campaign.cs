@@ -52,5 +52,12 @@ namespace ClickHealthBackend.Models
 
         [BsonElement("targetMetrics")]
         public BsonDocument TargetMetrics { get; set; }
+<<<<<<< HEAD
+=======
+
+        [BsonElement("contentIds")]
+        public List<string> ContentIds { get; set; } = new();
+
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     }
 }

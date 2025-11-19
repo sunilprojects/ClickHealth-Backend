@@ -11,5 +11,9 @@ namespace ClickHealthBackend.Services.Interfaces
         Task<List<MedicalContentResponseDto>> GetContentsByStatusAsync(ContentStatus status);
         Task<bool> UpdateContentStatusAsync(string contentId, ContentStatus newStatus, string approverName, string notes);
         Task<List<ContentWorkflowDTO>> GetContentWorkflowByUploaderAsync(string uploaderId);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     }
 }

@@ -136,5 +136,15 @@ namespace ClickHealthBackend.Repositories.Implementations
             var result = await _content.ReplaceOneAsync(c => c.ContentId == content.ContentId, content);
             return result.IsAcknowledged && result.ModifiedCount > 0;
         }
+<<<<<<< HEAD
+=======
+
+        public async Task<List<Content>> GetApprovedContentAsync()
+        {
+            var filter = Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
+            return await _content.Find(filter).ToListAsync();
+        }
+
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     }
 }

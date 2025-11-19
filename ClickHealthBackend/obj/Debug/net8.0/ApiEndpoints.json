@@ -161,6 +161,19 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignDashboardController",
+<<<<<<< HEAD
+=======
+    "Method": "GetApprovedContent",
+    "RelativePath": "api/CampaignDashboard/approved",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.CampaignDashboardController",
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     "Method": "GetDashboard",
     "RelativePath": "api/CampaignDashboard/dashboard",
     "HttpMethod": "GET",
@@ -181,19 +194,42 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
+<<<<<<< HEAD
     "Method": "CreateCampaign",
+=======
+    "Method": "CreateCampaignAsync",
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     "RelativePath": "api/Campaigns",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+<<<<<<< HEAD
         "Name": "campaignDto",
         "Type": "ClickHealthBackend.DTOs.CreateCampaignDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
+=======
+        "Name": "request",
+        "Type": "ClickHealthBackend.DTOs.CreateCampaignRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ClickHealthBackend.Models.Campaign",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",

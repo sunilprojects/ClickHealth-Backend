@@ -1,4 +1,8 @@
 ﻿using ClickHealthBackend.DTOs;
+<<<<<<< HEAD
+=======
+using ClickHealthBackend.Enums;
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
 using ClickHealthBackend.Services.Interfaces;
@@ -17,6 +21,7 @@ namespace ClickHealthBackend.Controllers
     [ApiController]
     public class CampaignsController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly ICampaignRepository _campaignRepo;
         private readonly ICampaignMetricsService _metricsService;
 
@@ -24,6 +29,18 @@ namespace ClickHealthBackend.Controllers
         {
             _campaignRepo = campaignRepo;
             _metricsService = metricsService;
+=======
+        private readonly IMongoCollection<Content> _content;
+        private readonly ICampaignRepository _campaignRepo;
+        private readonly ICampaignMetricsService _metricsService;
+        private readonly IContentRepository _contentRepoisitory;
+
+        public CampaignsController(ICampaignRepository campaignRepo, ICampaignMetricsService metricsService, IContentRepository _contentRepo)
+        {
+            _campaignRepo = campaignRepo;
+            _metricsService = metricsService;
+            _contentRepoisitory = _contentRepo;
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
         }
 
         // --- DTO Mapping Helper (Maps DB Model to Clean DTO) ---
@@ -90,10 +107,48 @@ namespace ClickHealthBackend.Controllers
         {
             return await _campaignRepo.GenerateCampaignCustomIdAsync();
         }
+<<<<<<< HEAD
 
 
         // --- Create Campaign ---
         [HttpPost]
+=======
+        [HttpPost]
+        public async Task<Campaign> CreateCampaignAsync(CreateCampaignRequest request)
+        {
+            // 1. Validate content is approved
+            var filter = Builders<Content>.Filter.In(c => c.ContentId, request.ContentIds)
+                         & Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
+
+            var approvedContents = await _content.Find(filter).ToListAsync();
+
+            if (approvedContents.Count != request.ContentIds.Count)
+                throw new Exception("Some selected content items are not approved!");
+
+            // 2. Create Campaign
+            Campaign campaign = new Campaign
+            {
+                Name = request.Name,
+                Therapy = request.Therapy,
+                Language = request.Language,
+                Cities = request.Cities,
+                Territories = request.Territories,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                Status = CampaignStatus.Active,
+                CreatedByUserId = request.CreatedByUserId,
+                ContentIds = request.ContentIds,
+            };
+
+            //await _campaignCollection.InsertOneAsync(campaign);
+            await _campaignRepo.CreateCampaignAsync(campaign);
+            return campaign;
+        }
+
+
+        // --- Create Campaign ---
+       /* [HttpPost]
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
         public async Task<IActionResult> CreateCampaign([FromBody] CreateCampaignDTO campaignDto)
         {
             // Get User ID (best practice)
@@ -142,7 +197,11 @@ namespace ClickHealthBackend.Controllers
 
             return CreatedAtAction(nameof(GetCampaign), new { id = createdCampaign.CampaignId }, MapToDto(createdCampaign));
         }
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
         // --- Get All Campaigns ---
         [HttpGet("Fetch")]
         public async Task<ActionResult<List<CampaignDTO>>> GetAllCampaigns()

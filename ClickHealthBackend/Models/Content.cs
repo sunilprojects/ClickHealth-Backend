@@ -65,7 +65,14 @@ namespace ClickHealthBackend.Models
 
         [BsonElement("metadata.ApproverNotes")]
         public string ApproverNotes { get; set; }
+<<<<<<< HEAD
         public object ApprovedAt { get;  set; }
       
+=======
+        [BsonElement("approvedAt")]
+        public DateTime? ApprovedAt { get; set; }
+
+
+>>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     }
 }
