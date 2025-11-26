@@ -12,3 +12,4 @@ ClickHealthBackend/obj/
 # Ignore secrets
 appsettings.Development.json
 appsettings.json
+ClickHealthBackend/appsettings.json
