@@ -1,0 +1,14 @@
+bin/
+obj/
+*.user
+*.vs
+*.swp
+*.swo
+
+# Ignore published/debug build outputs
+ClickHealthBackend/bin/
+ClickHealthBackend/obj/
+
+# Ignore secrets
+appsettings.Development.json
+appsettings.json
