@@ -1,104 +1,62 @@
 ﻿using ClickHealthBackend.Data;
-
 using ClickHealthBackend.Models;
-
 using ClickHealthBackend.Repositories.Interfaces;
-
 using MongoDB.Driver;
-
 using System.Collections.Generic;
-
 using System.Threading.Tasks;
 
 namespace ClickHealthBackend.Repositories.Implementations
-
 {
-
     public class CampaignRepository : ICampaignRepository
-
     {
-
         private readonly IMongoCollection<Campaign> _campaigns;
 
         public CampaignRepository(MongoDbContext context)
-
         {
-
             _campaigns = context.Campaigns;
-
         }
-
-        // Create a new campaign
 
         public async Task<Campaign> CreateCampaignAsync(Campaign campaign)
-
         {
-
             await _campaigns.InsertOneAsync(campaign);
-
             return campaign;
-
         }
-
-        // Get all campaigns
 
         public async Task<List<Campaign>> GetAllCampaignsAsync()
-
         {
-
             return await _campaigns.Find(_ => true).ToListAsync();
-
         }
 
-        // Get campaign by ID
-
-        public async Task<Campaign> GetByIdAsync(string campaignId)
-
+        // --- Fetch a campaign by CampaignCustomId ---
+        public async Task<Campaign> GetCampaignByIdAsync(string campaignCustomId)
         {
-
-            return await _campaigns.Find(c => c.CampaignId == campaignId).FirstOrDefaultAsync();
-
+            return await _campaigns
+                .Find(c => c.CampaignCustomId == campaignCustomId)
+                .FirstOrDefaultAsync();
         }
 
-        // Update campaign
-
+        // --- Update using CampaignCustomId ---
         public async Task<bool> UpdateAsync(Campaign campaign)
-
         {
-
-            var result = await _campaigns.ReplaceOneAsync(c => c.CampaignId == campaign.CampaignId, campaign);
+            var result = await _campaigns.ReplaceOneAsync(
+                c => c.CampaignCustomId == campaign.CampaignCustomId,
+                campaign
+            );
 
             return result.IsAcknowledged && result.ModifiedCount > 0;
-
         }
 
-        // Delete campaign
-
-        public async Task<bool> DeleteAsync(string campaignId)
-
+        // --- Delete using CampaignCustomId ---
+        public async Task<bool> DeleteAsync(string campaignCustomId)
         {
-
-            var result = await _campaigns.DeleteOneAsync(c => c.CampaignId == campaignId);
+            var result = await _campaigns.DeleteOneAsync(
+                c => c.CampaignCustomId == campaignCustomId
+            );
 
             return result.IsAcknowledged && result.DeletedCount > 0;
-
         }
 
-        public Task CreateAsync(Campaign campaign)
-
-        {
-
-            throw new NotImplementedException();
-
-        }
-
-        public Task<Campaign> GetCampaignByIdAsync(string id)
-                    {
-
-            throw new NotImplementedException();
-
-        }
-
+        // --- Generate Campaign Custom ID (CMP001, CMP002...) ---
         public async Task<string> GenerateCampaignCustomIdAsync()
         {
             var sort = Builders<Campaign>.Sort.Descending(x => x.CampaignCustomId);
@@ -119,11 +77,23 @@ namespace ClickHealthBackend.Repositories.Implementations
             return $"CMP{nextNumber:D3}";
         }
 
-        public Task<Campaign> GetLastCampaignAsync()
+        public async Task<Campaign> GetLastCampaignAsync()
         {
-            throw new NotImplementedException();
+            var sort = Builders<Campaign>.Sort.Descending(c => c.CampaignCustomId);
+
+            return await _campaigns
+                .Find(_ => true)
+                .Sort(sort)
+                .FirstOrDefaultAsync();
         }
+
+        public async Task<Campaign> GetByIdAsync(string campaignCustomId)
+        {
+            return await _campaigns
+                .Find(x => x.CampaignCustomId == campaignCustomId)
+                .FirstOrDefaultAsync();
+        }
+
+
     }
-
 }
-

@@ -1,6 +1,7 @@
 
-﻿using ClickHealthBackend.Models;
 ﻿using ClickHealthBackend.DTOs;
+using ClickHealthBackend.Enums;
+﻿using ClickHealthBackend.Models;
 using System.Threading.Tasks;
 
 namespace ClickHealthBackend.Repositories.Interfaces
@@ -37,13 +38,24 @@ namespace ClickHealthBackend.Repositories.Interfaces
         Task<List<ContentMetricsDTO>> GetContentMetricsAsync(PerformanceFilterDTO filter);
         Task<List<CityPerformanceDTO>> GetCityPerformanceAsync(PerformanceFilterDTO filter);
         Task<List<Content>> GetAllContentAsync();
-
         Task<List<Content>> GetApprovedContentAsync();
+        // Task<List<Content>> GetManyByIdsAsync(List<string> contentIds);
 
-    }
-}
 
+        Task<bool> UpdateStatusByCustomIdAsync(
+    string contentCustomId,
+    ContentStatus newStatus,
+    string approverCustomId,
+    string approverName,
+    string? remarks);
 
     
+    Task<List<Content>> GetByIdsAsync(List<string> customIds);
 
+    }
+
+
+
+
+}
 

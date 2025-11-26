@@ -4,16 +4,32 @@ namespace ClickHealthBackend.DTOs
 {
     public class ContentDTO
     {
-        public string MedicalName { get; set; }       // was Therapy
-        public string ContentLanguage { get; set; }   // was Language
-        public string ContentDescription { get; set; } // was Description
-        public string PdfUrl { get; set; }            // was FileUrl
-        public string VideoUrl { get; set; }          // was ThumbnailUrl
-                                                     
-        public DateTime? ReviewOn { get; set; } // ✅ Nullable — optional scheduling
-        public DateTime? ExpiresOn { get; set; }     // was ExpiryDate
+        public string Title { get; set; }
+        public string Url { get; set; }
+        public string FileType { get; set; }
 
+        public string MedicalName { get; set; }
+        public string ContentLanguage { get; set; }
+        public string ContentDescription { get; set; }
+
+        public string PdfUrl { get; set; }
+        public string VideoUrl { get; set; }
+
+        public DateTime? ReviewOn { get; set; }
+        public DateTime? ExpiresOn { get; set; }
 
         public ContentStatus Status { get; set; }
+
+        // Who uploaded?
+        public string UploadedBy { get; set; }
+        public DateTime UploadedAt { get; set; }
+
+        // Who approved?
+        public string ApprovedBy { get; set; }
+        public DateTime? ApprovedAt { get; set; }
+        public string ApproverNotes { get; set; }
+
+
     }
 }
+

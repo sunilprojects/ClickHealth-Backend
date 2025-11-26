@@ -1,8 +1,8 @@
 ﻿using ClickHealthBackend.Data;
 using ClickHealthBackend.DTOs;
+using ClickHealthBackend.Enums;
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
-using ClickHealthBackend.Enums;
 using MongoDB.Driver;
 
 namespace ClickHealthBackend.Repositories.Implementations
@@ -11,142 +11,108 @@ namespace ClickHealthBackend.Repositories.Implementations
     {
         private readonly IMongoCollection<Content> _content;
         private readonly IMongoCollection<PatientEngagement> _patientEngagements;
-        private readonly IMongoCollection<User> _users;
 
         public ContentRepository(MongoDbContext context)
         {
             _content = context.Contents;
             _patientEngagements = context.PatientEngagement;
-            _users = context.Users;
         }
 
-        // --- Simple Fetch ---
-        public async Task<List<Content>> GetAllContentAsync() =>
-            await _content.Find(_ => true).ToListAsync();
-
-        // --- Metrics Aggregation ---
-        public async Task<List<ContentMetricsDTO>> GetContentMetricsAsync(PerformanceFilterDTO filter)
+        public async Task<Content> GetByCustomIdAsync(string customId)
         {
-            var engagementFilter = Builders<PatientEngagement>.Filter.Empty;
-
-            if (filter.StartDate.HasValue)
-                engagementFilter &= Builders<PatientEngagement>.Filter.Gte(a => a.ViewedAt, filter.StartDate.Value);
-            if (filter.EndDate.HasValue)
-                engagementFilter &= Builders<PatientEngagement>.Filter.Lte(a => a.ViewedAt, filter.EndDate.Value);
-
-            var engagements = await _patientEngagements.Find(engagementFilter).ToListAsync();
-
-            var grouped = engagements
-                .GroupBy(a => a.ContentId)
-                .Select(g => new
-                {
-                    ContentId = g.Key,
-                    Completions = g.Count(a => a.CompletedAt.HasValue),
-                    TotalDwellTimeSeconds = g.Sum(a => a.DurationSeconds),
-                    TotalShares = g.Count(a => !string.IsNullOrEmpty(a.InviteCode)),
-                    TotalViews = g.Count()
-                })
-                .ToList();
-
-            var contentIds = grouped.Select(g => g.ContentId).ToList();
-            var contentMetadata = await _content.Find(c => contentIds.Contains(c.ContentId)).ToListAsync();
-
-            var contentMap = contentMetadata.ToDictionary(c => c.ContentId, c => c);
-
-            var metrics = grouped
-                .Select(g =>
-                {
-                    if (!contentMap.TryGetValue(g.ContentId, out var content))
-                        return null;
-
-                    if (!string.IsNullOrEmpty(filter.Language) && content.Language != filter.Language)
-                        return null;
-
-                    double avgDwellTimeMins = g.TotalViews > 0 ? (double)g.TotalDwellTimeSeconds / 60 / g.TotalViews : 0;
-                    double shareRate = g.TotalViews > 0 ? (double)g.TotalShares / g.TotalViews * 100 : 0;
-
-                    return new ContentMetricsDTO
-                    {
-                        ContentId = content.ContentId,
-                        Title = content.Therapy,
-                        ContentType = content.ContentType.ToString(),
-                        Language = content.Language,
-                        Completions = g.Completions,
-                        AverageDwellTimeMinutes = Math.Round(avgDwellTimeMins, 2),
-                        ShareRatePercentage = Math.Round(shareRate, 2),
-                    };
-                })
-                .Where(m => m != null)
-                .ToList();
-
-            Console.WriteLine("StartDate: " + filter.StartDate);
-            Console.WriteLine("EndDate: " + filter.EndDate);
-            Console.WriteLine("Language: " + filter.Language);
-
-            Console.WriteLine("Engagements Count: " + engagements.Count);
-            Console.WriteLine("Grouped Count: " + grouped.Count);
-            //Console.WriteLine("City Result Count: " + cityResults.Count);
-
-
-            return metrics!;
+            return await _content
+                .Find(c => c.ContentCustomId == customId)
+                .FirstOrDefaultAsync();
         }
 
-        // --- City Performance ---
-        public async Task<List<CityPerformanceDTO>> GetCityPerformanceAsync(PerformanceFilterDTO filter)
+        public async Task<bool> CreateAsync(Content content)
         {
-            var allEngagements = await _patientEngagements.Find(_ => true).ToListAsync();
-
-            var cityGroup = allEngagements
-                .Where(a => !string.IsNullOrEmpty(a.City))
-                .GroupBy(a => a.City)
-                .Select(g => new
-                {
-                    City = g.Key,
-                    TotalCompletions = g.Count(a => a.CompletedAt.HasValue),
-                    TotalEngagements = g.Count(),
-                    LanguageMix = g.Any(a => !string.IsNullOrEmpty(a.Language)) ? "Mixed" : "English"
-                })
-                .Where(g => string.IsNullOrEmpty(filter.City) || g.City == filter.City)
-                .ToList();
-
-            return cityGroup.Select(g => new CityPerformanceDTO
-            {
-                City = g.City,
-                TotalCompletions = g.TotalCompletions,
-                EngagementPercentage = Math.Round((double)g.TotalCompletions / g.TotalEngagements * 100, 2),
-                LanguageMix = g.LanguageMix
-            }).ToList();
-        }
-
-        // --- CRUD ---
-        public async Task<Content> GetByIdAsync(string id) =>
-            await _content.Find(c => c.ContentId == id).FirstOrDefaultAsync();
-
-        public async Task<IEnumerable<Content>> GetPendingContentAsync() =>
-            await _content.Find(c => c.Status == ContentStatus.Pending).ToListAsync();
-
-        public async Task<IEnumerable<Content>> GetAllAsync() =>
-            await _content.Find(_ => true).ToListAsync();
-
-        public async Task CreateAsync(Content content) =>
             await _content.InsertOneAsync(content);
+            return true;
+        }
 
         public async Task<bool> UpdateAsync(Content content)
         {
-            var result = await _content.ReplaceOneAsync(c => c.ContentId == content.ContentId, content);
-            return result.IsAcknowledged && result.ModifiedCount > 0;
+            var result = await _content.ReplaceOneAsync(
+                c => c.ContentId == content.ContentId,
+                content
+            );
+            return result.ModifiedCount > 0;
         }
 
+        public async Task<bool> UpdateStatusByCustomIdAsync(
+         string contentCustomId,
+         ContentStatus newStatus,
+         string approverCustomId,
+         string approverName,
+         string? remarks)
+        {
+            var filter = Builders<Content>.Filter.Eq(c => c.ContentCustomId, contentCustomId);
+
+            var update = Builders<Content>.Update
+                .Set(c => c.Status, newStatus)
+                .Set(c => c.Metadata.ApprovedByUserId, approverCustomId)
+                .Set(c => c.Metadata.ApprovedByUserName, approverName)
+                .Set(c => c.Metadata.ApproverNotes, remarks)
+                .Set(c => c.ApprovedAt, DateTime.UtcNow);
+
+            var result = await _content.UpdateOneAsync(filter, update);
+
+            return result.ModifiedCount > 0;
+        }
+
+
+
+
+        public async Task<Content> GetByIdAsync(string id)
+        {
+            return await _content.Find(c => c.ContentId == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Content>> GetPendingContentAsync()
+        {
+            return await _content
+                .Find(c => c.Status == ContentStatus.Pending)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Content>> GetAllAsync()
+        {
+            return await _content.Find(_ => true).ToListAsync();
+        }
+
+        public async Task<List<Content>> GetAllContentAsync()
+        {
+            return await _content.Find(_ => true).ToListAsync();
+        }
 
         public async Task<List<Content>> GetApprovedContentAsync()
         {
-            var filter = Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
-            return await _content.Find(filter).ToListAsync();
+            return await _content
+                .Find(c => c.Status == ContentStatus.Approved)
+                .ToListAsync();
         }
 
-        public IMongoCollection<Content>? GetContentCollection()
+        Task IContentRepository.CreateAsync(Content content)
+        {
+            return CreateAsync(content);
+        }
+
+        public Task<List<ContentMetricsDTO>> GetContentMetricsAsync(PerformanceFilterDTO filter)
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<CityPerformanceDTO>> GetCityPerformanceAsync(PerformanceFilterDTO filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<Content>> GetByIdsAsync(List<string> customIds)
+        {
+            return await _content.Find(x => customIds.Contains(x.ContentCustomId))
+                                    .ToListAsync();
+        }
+
     }
 }

@@ -19,6 +19,7 @@ namespace ClickHealthBackend.Services.Interfaces
         Task<User> RegisterUserAsync(RegistrationRequestDto request);
 
         // Pending approvals
+
         Task<List<User>> GetPendingUsersAsync();
         Task<List<User>> GetUsersByStatusAsync(UserStatus status);
 
@@ -37,5 +38,6 @@ namespace ClickHealthBackend.Services.Interfaces
         Task<List<User>> GetAllUsersAsync();
 
         string GenerateJwtToken(User user);
+        Task<User?> GetByEmailAsync(string email);
     }
 }

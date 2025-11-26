@@ -4,23 +4,10 @@
     using MongoDB.Driver;
 
     using ClickHealthBackend.Models;
-
-    using System;
-
-    using System.Collections.Generic;
-
-    using System.Linq;
+using ClickHealth.Server.Models;
 
 
-    using ClickHealth.Server.Models;
-
-
-    using System.Diagnostics;
- 
-
- 
- 
-    namespace ClickHealthBackend.Data
+namespace ClickHealthBackend.Data
 
     {
 
@@ -50,7 +37,6 @@
 
             public IMongoCollection<Content> Contents => Database.GetCollection<Content>("Contents");
 
-            public IMongoCollection<AuditLog> AuditLog => Database.GetCollection<AuditLog>("AuditLog");
 
 
 
@@ -58,28 +44,28 @@
 
             public IMongoCollection<CampaignAsset> CampaignAsset => Database.GetCollection<CampaignAsset>("CampaignAsset");
             public IMongoCollection<CampaignMetrics> CampaignMetrics => Database.GetCollection<CampaignMetrics>("CampaignMetrics");
-            public IMongoCollection<ConsentRecord> ConsentRecord => Database.GetCollection<ConsentRecord>("ConsentRecord");
             public IMongoCollection<ContentApproval> ContentApproval => Database.GetCollection<ContentApproval>("ContentApproval");
             public IMongoCollection<ContentEngagement> ContentEngagement => Database.GetCollection<ContentEngagement>("ContentEngagement");
-            public IMongoCollection<HCPActivity> HCPActivity => Database.GetCollection<HCPActivity>("HCPActivity");
 
             public IMongoCollection<MRActivity> MRActivity => Database.GetCollection<MRActivity>("MRActivity");
             public IMongoCollection<PatientEngagement> PatientEngagement => Database.GetCollection<PatientEngagement>("PatientEngagement");
 
             public IMongoCollection<Patient> PatientInvite => Database.GetCollection<Patient>("PatientInvite");
+        public IMongoCollection<HCP> HCPs => Database.GetCollection<HCP>("HCPs");
+        public IMongoCollection<PatientInvite> PatientInvites => Database.GetCollection<PatientInvite>("PatientInvites");
 
 
+        // Add rest of your collections
+        public IMongoCollection<Content> Content => Database.GetCollection<Content>("contents");
 
-            // Add rest of your collections
+        public IMongoCollection<ContentAsset> ContentAssets => Database.GetCollection<ContentAsset>("contentAssets");
 
-
-        }
-
+        public IMongoCollection<ConsentRecord>? ConsentRecord { get; internal set; }
     }
 
+}
 
 
-            // Add rest of your collections
 
 
 

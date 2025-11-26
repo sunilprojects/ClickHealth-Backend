@@ -1,184 +1,151 @@
-﻿using ClickHealth.Server.Models;
-using ClickHealthBackend.Enums;
+﻿using ClickHealthBackend.DTOs;
 using ClickHealthBackend.Models;
-using ClickHealthBackend.Repositories.Interfaces;
 using ClickHealthBackend.Services.Interfaces;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.Threading.Tasks;
+using MongoDB.Driver;
 
-namespace ClickHealthBackend.Services.Implementation
-
+namespace ClickHealthBackend.Services.Implementations
 {
-
-    public class PatientService : IPatientService
-
+    public class PatientService : IPatientInviteService
     {
+        private readonly IMongoCollection<Patient> _patients;
+        private readonly IMongoCollection<PatientInvite> _invites;
+        private readonly IMongoCollection<Campaign> _campaigns;
+        private readonly IMongoCollection<Content> _contents;
 
-        private readonly IPatientInviteRepository _patientInviteRepository;
-
-        private readonly IContentRepository _contentRepository;
-
-        private readonly IConsentRecordRepository _consentRecordRepository;
-
-        private readonly IPatientEngagementRepository _patientEngagementRepository;
-
-        public PatientService(
-
-            IPatientInviteRepository patientInviteRepository,
-
-            IContentRepository contentRepository,
-
-            IConsentRecordRepository consentRecordRepository,
-
-            IPatientEngagementRepository patientEngagementRepository)
-
+        public PatientService(IMongoDatabase db)
         {
-
-            _patientInviteRepository = patientInviteRepository;
-
-            _contentRepository = contentRepository;
-
-            _consentRecordRepository = consentRecordRepository;
-
-            _patientEngagementRepository = patientEngagementRepository;
-
+            _patients = db.GetCollection<Patient>("Patients");
+            _invites = db.GetCollection<PatientInvite>("PatientInvites");
+            _campaigns = db.GetCollection<Campaign>("Campaigns");
+            _contents = db.GetCollection<Content>("Contents");
         }
 
-        // Retrieve content by secure invite code
-
-        public async Task<Content> GetContentByInviteCodeAsync(string inviteCode)
-
+        // ---------------------------------------------------------
+        // CREATE OR GET PATIENT
+        // ---------------------------------------------------------
+        public async Task<Patient> CreateOrGetPatientAsync(Patient patient)
         {
+            var existing = await _patients
+                .Find(x => x.Email == patient.Email)
+                .FirstOrDefaultAsync();
 
-            var invite = await _patientInviteRepository.GetByInviteCodeAsync(inviteCode);
+            if (existing != null)
+                return existing;
 
-            if (invite == null || !invite.IsActive || invite.ExpiresAt < DateTime.UtcNow)
-
-                return null;
-
-            return await _contentRepository.GetByIdAsync(invite.ContentId);
-
+            await _patients.InsertOneAsync(patient);
+            return patient;
         }
 
-        // Record patient consent including IP address for audit/compliance
-
-        public async Task<bool> RecordPatientConsentAsync(string inviteCode, string userIpAddress)
-
+        // ---------------------------------------------------------
+        // CREATE INVITE
+        // ---------------------------------------------------------
+        public async Task<PatientInvite> CreateInviteAsync(
+            string patientId,
+            string patientCustomId,
+            string campaignId,
+            string hcpId)
         {
-
-            var invite = await _patientInviteRepository.GetByInviteCodeAsync(inviteCode);
-
-            if (invite == null) return false;
-
-            var consentRecord = new ConsentRecord
-
+            var invite = new PatientInvite
             {
-
-                UserId = invite.HcpUserId,   // HCP responsible for the invite
-
-                UserType = "Patient",
-
-                ConsentType = "DPDP",
-
-                IsGranted = true,
-
-                GrantedAt = DateTime.UtcNow,
-
-                UserIpAddress = userIpAddress // Store the IP for compliance logging
-
+                PatientId = patientId,
+                PatientCustomId = patientCustomId,
+                CampaignId = campaignId,
+                HcpId = hcpId,
+                InvitedAt = DateTime.UtcNow,
+                ViewedContentIds = new List<string>() // Ensure not null
             };
 
-            await _consentRecordRepository.CreateAsync(consentRecord);
-
-            return true;
-
+            await _invites.InsertOneAsync(invite);
+            return invite;
         }
 
-        // Log engagement metrics for a patient
-
-        public async Task LogContentEngagementAsync(string inviteCode, string engagementType, int durationSeconds, string city, string language)
-
+        // ---------------------------------------------------------
+        // GET PATIENT BY CUSTOM ID
+        // ---------------------------------------------------------
+        public async Task<Patient> GetPatientByCustomIdAsync(string patientCustomId)
         {
-
-            var invite = await _patientInviteRepository.GetByInviteCodeAsync(inviteCode);
-
-            if (invite == null) return;
-
-            if (!Enum.TryParse(engagementType, true, out EngagementType parsedType))
-
-                parsedType = EngagementType.View;
-
-            var engagement = new PatientEngagement
-
-            {
-
-                InviteCode = inviteCode,
-
-                ContentId = invite.ContentId,
-
-                CampaignId = invite.CampaignId,
-
-                ViewedAt = DateTime.UtcNow,
-
-                ConsentGiven = true,
-
-                DurationSeconds = durationSeconds,
-
-                City = city,
-
-                Language = language,
-
-                EngagementType = parsedType
-
-            };
-
-            await _patientEngagementRepository.CreateAsync(engagement);
-
+            return await _patients
+                .Find(x => x.PatientCustomId == patientCustomId)
+                .FirstOrDefaultAsync();
         }
 
-        // Log quiz completion with responses safely converted to BSON
-
-        public async Task<bool> LogQuizCompletionAsync(string inviteCode, string contentId, Dictionary<string, object> quizResponses)
-
+        // ---------------------------------------------------------
+        // GET INVITE
+        // ---------------------------------------------------------
+        public async Task<PatientInvite> GetInviteAsync(string patientCustomId, string campaignId)
         {
-
-            var invite = await _patientInviteRepository.GetByInviteCodeAsync(inviteCode);
-
-            if (invite == null) return false;
-
-            var bsonQuizResponse = BsonSerializer.Deserialize<BsonDocument>(JsonSerializer.Serialize(quizResponses));
-
-            var engagement = new PatientEngagement
-
-            {
-
-                InviteCode = inviteCode,
-
-                ContentId = contentId,
-
-                CampaignId = invite.CampaignId,
-
-                CompletedAt = DateTime.UtcNow,
-
-                ConsentGiven = true,
-
-                QuizResponse = bsonQuizResponse,
-
-                EngagementType = EngagementType.Complete
-
-            };
-
-            await _patientEngagementRepository.CreateAsync(engagement);
-
-            return true;
-
+            return await _invites.Find(x =>
+                x.PatientCustomId == patientCustomId &&
+                x.CampaignId == campaignId
+            ).FirstOrDefaultAsync();
         }
 
+        // ---------------------------------------------------------
+        // GET CONTENTS FOR CAMPAIGN
+        // ---------------------------------------------------------
+        public async Task<List<Content>> GetCampaignContentsAsync(string campaignId)
+        {
+            var campaign = await _campaigns
+                .Find(x => x.CampaignCustomId == campaignId)
+                .FirstOrDefaultAsync();
+
+            if (campaign == null)
+                return new List<Content>();
+
+            return await _contents
+                .Find(c => campaign.ContentIds.Contains(c.ContentCustomId))
+                .ToListAsync();
+        }
+
+        // ---------------------------------------------------------
+        // RECORD CONTENT VIEW
+        // ---------------------------------------------------------
+        public async Task RecordContentViewAsync(string patientId, string campaignId, string contentId)
+        {
+            var update = Builders<PatientInvite>.Update
+                .AddToSet("ViewedContentIds", contentId);
+
+            await _invites.UpdateOneAsync(
+                x => x.PatientId == patientId && x.CampaignId == campaignId,
+                update
+            );
+        }
+
+        // ---------------------------------------------------------
+        // GET PATIENT DASHBOARD
+        // ---------------------------------------------------------
+        public async Task<PatientDashboardDTO> GetDashboardAsync(string patientCustomId, string campaignId)
+        {
+            var patient = await GetPatientByCustomIdAsync(patientCustomId);
+            var invite = await GetInviteAsync(patientCustomId, campaignId);
+            var contents = await GetCampaignContentsAsync(campaignId);
+
+            return new PatientDashboardDTO
+            {
+                PatientName = patient.Name,
+                PatientCustomId = patient.PatientCustomId,
+                CampaignId = campaignId,
+                HcpId = invite.HcpId,
+
+                Contents = contents.Select(x => new ContentDTO
+                {
+                    MedicalName = x.Therapy,
+                    ContentLanguage = x.Language,
+                    ContentDescription = x.Description,
+                    PdfUrl = x.FileUrl,
+                    VideoUrl = x.ThumbnailUrl,
+                    ReviewOn = x.ReviewDate,
+                    ExpiresOn = x.ExpiryDate,
+                    Status = x.Status
+                }).ToList(),
+
+                ViewedContentIds = invite.ViewedContentIds ?? new List<string>()
+            };
+        }
+
+        public Task SendCampaignToPatientsAsync(string campaignId, string hcpId, string specialty)
+        {
+            throw new NotImplementedException();
+        }
     }
-
 }
-

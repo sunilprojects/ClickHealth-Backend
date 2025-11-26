@@ -108,17 +108,65 @@
     ]
   },
   {
-    "ContainingType": "ClickHealthBackend.Controllers.AuthController",
-    "Method": "Error",
-    "RelativePath": "api/Auth/error",
+    "ContainingType": "ClickHealthBackend.Controllers.AssetsController",
+    "Method": "UploadAsset",
+    "RelativePath": "api/assets",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ClickHealthBackend.DTOs.UploadAssetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.AssetsController",
+    "Method": "GetAssetById",
+    "RelativePath": "api/assets/{assetId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reason",
+        "Name": "assetId",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.AssetsController",
+    "Method": "GetAssetsByContent",
+    "RelativePath": "api/assets/content/{contentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contentId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.AuthController",
+    "Method": "GoogleAutoLogin",
+    "RelativePath": "api/auth/google-auto-login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ClickHealthBackend.Controllers.AuthController\u002BGoogleLoginDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -126,7 +174,7 @@
   {
     "ContainingType": "ClickHealthBackend.Controllers.AuthController",
     "Method": "GoogleCallback",
-    "RelativePath": "api/Auth/google-callback",
+    "RelativePath": "api/auth/google-callback",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -136,7 +184,7 @@
   {
     "ContainingType": "ClickHealthBackend.Controllers.AuthController",
     "Method": "GoogleLogin",
-    "RelativePath": "api/Auth/google-login",
+    "RelativePath": "api/auth/google-login",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -144,25 +192,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClickHealthBackend.Controllers.AuthController",
-    "Method": "Login",
-    "RelativePath": "api/Auth/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "ClickHealthBackend.Controllers.AuthController\u002BLoginRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignDashboardController",
-<<<<<<< HEAD
-=======
     "Method": "GetApprovedContent",
     "RelativePath": "api/CampaignDashboard/approved",
     "HttpMethod": "GET",
@@ -173,7 +203,6 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignDashboardController",
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     "Method": "GetDashboard",
     "RelativePath": "api/CampaignDashboard/dashboard",
     "HttpMethod": "GET",
@@ -194,25 +223,13 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
-<<<<<<< HEAD
-    "Method": "CreateCampaign",
-=======
     "Method": "CreateCampaignAsync",
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
     "RelativePath": "api/Campaigns",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-<<<<<<< HEAD
-        "Name": "campaignDto",
-        "Type": "ClickHealthBackend.DTOs.CreateCampaignDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-=======
         "Name": "request",
         "Type": "ClickHealthBackend.DTOs.CreateCampaignRequest",
         "IsRequired": true
@@ -220,7 +237,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ClickHealthBackend.Models.Campaign",
+        "Type": "ClickHealthBackend.DTOs.CampaignDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -229,7 +246,32 @@
         "StatusCode": 200
       }
     ]
->>>>>>> 6d54bde216ffe9ad760fc6fd5b3df6d9b1538c81
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
+    "Method": "GetCampaign",
+    "RelativePath": "api/Campaigns/{campaignCustomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "campaignCustomId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ClickHealthBackend.DTOs.CampaignDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
@@ -249,29 +291,29 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
-    "Method": "GetCampaign",
-    "RelativePath": "api/Campaigns/{id}",
-    "HttpMethod": "GET",
+    "Method": "SendCampaign",
+    "RelativePath": "api/Campaigns/{campaignId}/send-to-patients",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "campaignId",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "hcpId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "specialty",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "ClickHealthBackend.DTOs.CampaignDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.CampaignsController",
@@ -305,6 +347,32 @@
   },
   {
     "ContainingType": "ClickHealthBackend.Controllers.ContentController",
+    "Method": "GetContentsByStatus",
+    "RelativePath": "api/Content/by-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MedicalContentResponseDto, ClickHealthBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ClickHealthBackend.Controllers.ContentController",
     "Method": "GetPendingContents",
     "RelativePath": "api/Content/pending",
     "HttpMethod": "GET",
@@ -326,13 +394,13 @@
   {
     "ContainingType": "ClickHealthBackend.Controllers.ContentController",
     "Method": "UpdateContentStatus",
-    "RelativePath": "api/Content/update-status/{contentId}",
+    "RelativePath": "api/Content/update-status/{contentCustomId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "contentId",
+        "Name": "contentCustomId",
         "Type": "System.String",
         "IsRequired": true
       },
@@ -342,7 +410,17 @@
         "IsRequired": false
       },
       {
-        "Name": "notes",
+        "Name": "approverCustomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "approverName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "remarks",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -391,6 +469,16 @@
         "Name": "Video",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
+      },
+      {
+        "Name": "uploaderCustomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "uploaderName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -409,152 +497,9 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.API.Controllers.HCPController",
-    "Method": "GetAssignedContent",
-    "RelativePath": "api/HCP/content/assigned",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "hcpUserId",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.API.Controllers.HCPController",
-    "Method": "GeneratePatientInvite",
-    "RelativePath": "api/HCP/patient-invites",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "inviteDto",
-        "Type": "ClickHealthBackend.DTOs.PatientInviteDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.API.Controllers.HCPController",
-    "Method": "CompleteQuiz",
-    "RelativePath": "api/HCP/quizzes/{contentId}/complete",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "contentId",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "quizCompletionDto",
-        "Type": "ClickHealthBackend.DTOs.QuizCompletionDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.HCPMetricsController",
-    "Method": "GetAverageEngagementScore",
-    "RelativePath": "api/HCPMetrics/average-score",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Double",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.HCPMetricsController",
-    "Method": "GetMonthlyActiveHCPs",
-    "RelativePath": "api/HCPMetrics/monthly-active",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int64",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.HCPMetricsController",
-    "Method": "GetMostEngagedHCPs",
-    "RelativePath": "api/HCPMetrics/most-engaged",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[ClickHealthBackend.Models.User, ClickHealthBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.HCPMetricsController",
-    "Method": "GetLowestEngagedHCPs",
-    "RelativePath": "api/HCPMetrics/needs-attention",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[ClickHealthBackend.Models.User, ClickHealthBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.HCPMetricsController",
-    "Method": "GetTotalHCPOnboarded",
-    "RelativePath": "api/HCPMetrics/total-onboarded",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int64",
+        "Type": "System.Collections.Generic.List\u00601[[ClickHealthBackend.DTOs.ContentWorkflowDTO, ClickHealthBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -647,15 +592,20 @@
     ]
   },
   {
-    "ContainingType": "ClickHealthBackend.Controllers.MRController",
-    "Method": "GetTerritorySnapshot",
-    "RelativePath": "api/MR/dashboard/snapshot",
+    "ContainingType": "ClickHealthBackend.Controllers.PatientsController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/Patients/dashboard",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mrUserId",
+        "Name": "pid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cid",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -663,122 +613,26 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClickHealthBackend.Controllers.MRController",
-    "Method": "LogFieldFeedback",
-    "RelativePath": "api/MR/feedback",
+    "ContainingType": "ClickHealthBackend.Controllers.PatientsController",
+    "Method": "UploadPatients",
+    "RelativePath": "api/Patients/upload-excel/{campaignId}/{hcpId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "feedbackDto",
-        "Type": "ClickHealthBackend.DTOs.FieldFeedbackDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.MRController",
-    "Method": "OnboardHcp",
-    "RelativePath": "api/MR/onboard/hcp",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "onboardDto",
-        "Type": "ClickHealthBackend.DTOs.HcpOnboardDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.MRController",
-    "Method": "ShareCampaign",
-    "RelativePath": "api/MR/share-campaign",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "shareDto",
-        "Type": "ClickHealthBackend.DTOs.ContentShareDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.PatientController",
-    "Method": "RecordConsent",
-    "RelativePath": "api/Patient/consent",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "consentDto",
-        "Type": "ClickHealthBackend.DTOs.PatientConsentDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.PatientController",
-    "Method": "GetContentByInviteCode",
-    "RelativePath": "api/Patient/content",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "inviteCode",
-        "Type": "System.String",
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
+      },
       {
-        "Type": "ClickHealthBackend.Models.Content",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.PatientController",
-    "Method": "LogContentEngagement",
-    "RelativePath": "api/Patient/engagement",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "engagementDto",
-        "Type": "ClickHealthBackend.DTOs.PatientEngagementDto",
+        "Name": "campaignId",
+        "Type": "System.String",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClickHealthBackend.Controllers.PatientController",
-    "Method": "LogQuizCompletion",
-    "RelativePath": "api/Patient/quizzes/complete",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "quizCompletionDto",
-        "Type": "ClickHealthBackend.DTOs.PatientQuizCompletionDto",
+        "Name": "hcpId",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

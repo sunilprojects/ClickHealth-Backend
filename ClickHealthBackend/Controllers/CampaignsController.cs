@@ -2,14 +2,14 @@
 using ClickHealthBackend.Enums;
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
+using ClickHealthBackend.Services.Implementations;
 using ClickHealthBackend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ClickHealthBackend.Controllers
@@ -21,27 +21,33 @@ namespace ClickHealthBackend.Controllers
         private readonly ICampaignRepository _campaignRepo;
         private readonly ICampaignMetricsService _metricsService;
         private readonly IContentRepository _contentRepository;
-        private readonly IMongoCollection<Content> _content;
+        private readonly IMongoCollection<Content> _contentCollection;
+
+        private readonly PatientInviteService _inviteService;
+
 
         public CampaignsController(
             ICampaignRepository campaignRepo,
             ICampaignMetricsService metricsService,
-            IContentRepository contentRepo)
+            IContentRepository contentRepository,
+            IMongoDatabase database,
+            PatientInviteService inviteService)
         {
             _campaignRepo = campaignRepo;
             _metricsService = metricsService;
-            _contentRepository = contentRepo;
+            _contentRepository = contentRepository;
+            _contentCollection = database.GetCollection<Content>("Contents");
+            _inviteService = inviteService;
 
-            // optional: if needed for content validation
-            _content = _contentRepository?.GetContentCollection();
         }
 
-        // --- DTO Mapping Helper ---
+        // ---------- Map Entity to DTO ----------
         private CampaignDTO MapToDto(Campaign campaign)
         {
             if (campaign == null) return null;
 
             Dictionary<string, object> targetMetrics = null;
+
             if (campaign.TargetMetrics != null)
             {
                 targetMetrics = campaign.TargetMetrics.ToDictionary(
@@ -63,10 +69,13 @@ namespace ClickHealthBackend.Controllers
                 EndDate = campaign.EndDate,
                 CreatedByUserId = campaign.CreatedByUserId,
                 CreatedAt = campaign.CreatedAt,
+                Status = campaign.Status.ToString(),
+                ContentIds = campaign.ContentIds,
                 TargetMetrics = targetMetrics
             };
         }
 
+        // ---------- FIX MISSING METHOD ----------
         private object ConvertBsonValue(BsonValue value)
         {
             if (value == null || value.IsBsonNull) return null;
@@ -81,8 +90,11 @@ namespace ClickHealthBackend.Controllers
                 BsonType.DateTime => value.ToUniversalTime(),
                 BsonType.ObjectId => value.AsObjectId.ToString(),
                 BsonType.Array => value.AsBsonArray.Select(ConvertBsonValue).ToList(),
-                BsonType.Document => value.AsBsonDocument.ToDictionary(e => e.Name, e => ConvertBsonValue(e.Value)),
-                _ => value.ToString(),
+                BsonType.Document => value.AsBsonDocument.ToDictionary(
+                                        x => x.Name,
+                                        x => ConvertBsonValue(x.Value)
+                                    ),
+                _ => value.ToString()
             };
         }
 
@@ -91,22 +103,24 @@ namespace ClickHealthBackend.Controllers
             return await _campaignRepo.GenerateCampaignCustomIdAsync();
         }
 
-        // --------------------------------------------------------------------------------
-        // ✔ Version 1: Create Campaign (Divya’s version — validates content approval)
-        // --------------------------------------------------------------------------------
-        [HttpPost("create-v2")]
-        public async Task<ActionResult<Campaign>> CreateCampaignAsync(CreateCampaignRequest request)
+        // CREATE CAMPAIGN
+        [HttpPost]
+        public async Task<ActionResult<CampaignDTO>> CreateCampaignAsync([FromBody] CreateCampaignRequest request)
         {
-            var filter = Builders<Content>.Filter.In(c => c.ContentId, request.ContentIds)
-                        & Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
+            if (request == null || request.ContentIds == null || request.ContentIds.Count == 0)
+                return BadRequest("ContentIds are required.");
 
-            var approvedContents = await _content.Find(filter).ToListAsync();
+            var filter = Builders<Content>.Filter.In(c => c.ContentCustomId, request.ContentIds)
+                       & Builders<Content>.Filter.Eq(c => c.Status, ContentStatus.Approved);
+
+            var approvedContents = await _contentCollection.Find(filter).ToListAsync();
 
             if (approvedContents.Count != request.ContentIds.Count)
-                return BadRequest("Some selected content items are not approved!");
+                return BadRequest("Some content items are not approved.");
 
-            Campaign campaign = new Campaign
+            var campaign = new Campaign
             {
+                CampaignCustomId = await GenerateCampaignCustomId(),
                 Name = request.Name,
                 Therapy = request.Therapy,
                 Language = request.Language,
@@ -116,57 +130,18 @@ namespace ClickHealthBackend.Controllers
                 EndDate = request.EndDate,
                 Status = CampaignStatus.Active,
                 CreatedByUserId = request.CreatedByUserId,
-                ContentIds = request.ContentIds
+                ContentIds = request.ContentIds,
+                CreatedAt = DateTime.UtcNow
             };
 
-            var created = await _campaignRepo.CreateCampaignAsync(campaign);
-            return Ok(created);
-        }
-
-        // --------------------------------------------------------------------------------
-        // ✔ Version 2: Original Create Campaign (with TargetMetrics support)
-        // --------------------------------------------------------------------------------
-        [HttpPost]
-        public async Task<IActionResult> CreateCampaign([FromBody] CreateCampaignDTO campaignDto)
-        {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                              ?? ObjectId.GenerateNewId().ToString();
-
-            var bsonTargetMetrics = new BsonDocument();
-            if (campaignDto.TargetMetrics != null)
-            {
-                foreach (var kvp in campaignDto.TargetMetrics)
-                {
-                    if (kvp.Value is JsonElement jsonElement)
-                        bsonTargetMetrics.Add(kvp.Key, ConvertJsonElementToBsonValue(jsonElement));
-                    else if (kvp.Value != null)
-                        bsonTargetMetrics.Add(kvp.Key, BsonValue.Create(kvp.Value));
-                }
-            }
-
-            var newCampaign = new Campaign
-            {
-                CampaignCustomId = await GenerateCampaignCustomId(),
-                Name = campaignDto.Name,
-                Therapy = campaignDto.Therapy,
-                Cities = campaignDto.Cities,
-                Territories = campaignDto.Territories,
-                Language = campaignDto.Language,
-                StartDate = campaignDto.StartDate,
-                EndDate = campaignDto.EndDate,
-                CreatedAt = DateTime.UtcNow,
-                CreatedByUserId = userId,
-                TargetMetrics = bsonTargetMetrics
-            };
-
-            var createdCampaign = await _campaignRepo.CreateCampaignAsync(newCampaign);
+            await _campaignRepo.CreateCampaignAsync(campaign);
 
             return CreatedAtAction(nameof(GetCampaign),
-                new { id = createdCampaign.CampaignId },
-                MapToDto(createdCampaign));
+                new { campaignCustomId = campaign.CampaignCustomId },
+                MapToDto(campaign));
         }
 
-        // --- Get All Campaigns ---
+        // GET ALL
         [HttpGet("Fetch")]
         public async Task<ActionResult<List<CampaignDTO>>> GetAllCampaigns()
         {
@@ -174,48 +149,33 @@ namespace ClickHealthBackend.Controllers
             return Ok(campaigns.Select(MapToDto).ToList());
         }
 
-        // --- Get Campaign by ID ---
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CampaignDTO>> GetCampaign(string id)
+        // GET ONE
+        [HttpGet("{campaignCustomId}")]
+        public async Task<ActionResult<CampaignDTO>> GetCampaign(string campaignCustomId)
         {
-            var campaign = await _campaignRepo.GetCampaignByIdAsync(id);
-            return campaign == null ? NotFound() : Ok(MapToDto(campaign));
+            var campaign = await _campaignRepo.GetCampaignByIdAsync(campaignCustomId);
+            if (campaign == null)
+                return NotFound($"Campaign '{campaignCustomId}' not found.");
+
+            return Ok(MapToDto(campaign));
         }
 
-        // --- Territory HeatMap Metrics ---
+        // HEATMAP
         [HttpGet("{campaignId}/regional-performance-heatmap")]
         public async Task<IActionResult> GetRegionalPerformanceHeatMap(string campaignId)
         {
             var heatmapData = await _metricsService.GetRegionalPerformanceHeatMapAsync(campaignId);
-
             if (heatmapData == null || heatmapData.Count == 0)
-                return NotFound($"No metrics found for campaign ID: {campaignId}");
+                return NotFound($"No regional metrics available for campaign {campaignId}");
 
             return Ok(heatmapData);
         }
 
-        // Convert JsonElement → BsonValue
-        private BsonValue ConvertJsonElementToBsonValue(JsonElement element)
+        [HttpPost("{campaignId}/send-to-patients")]
+        public async Task<IActionResult> SendCampaign(string campaignId, [FromQuery] string hcpId, [FromQuery] string specialty)
         {
-            return element.ValueKind switch
-            {
-                JsonValueKind.String => new BsonString(element.GetString()),
-                JsonValueKind.Number =>
-                    element.TryGetInt32(out int i) ? new BsonInt32(i) :
-                    element.TryGetInt64(out long l) ? new BsonInt64(l) :
-                    new BsonDouble(element.GetDouble()),
-                JsonValueKind.True => new BsonBoolean(true),
-                JsonValueKind.False => new BsonBoolean(false),
-                JsonValueKind.Null => BsonNull.Value,
-                JsonValueKind.Undefined => BsonNull.Value,
-                JsonValueKind.Object => new BsonDocument(
-                    element.EnumerateObject().ToDictionary(
-                        p => p.Name,
-                        p => ConvertJsonElementToBsonValue(p.Value))),
-                JsonValueKind.Array => new BsonArray(
-                    element.EnumerateArray().Select(ConvertJsonElementToBsonValue)),
-                _ => BsonNull.Value,
-            };
+            await _inviteService.SendCampaignToPatientsAsync(campaignId, hcpId, specialty);
+            return Ok(new { message = "Campaign sent to patients successfully." });
         }
     }
 }

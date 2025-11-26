@@ -6,20 +6,17 @@ namespace ClickHealthBackend.Repositories.Interfaces
 {
     public interface ICampaignRepository
     {
-        Task<Campaign> GetLastCampaignAsync();
-
         Task<Campaign> CreateCampaignAsync(Campaign campaign);
         Task<List<Campaign>> GetAllCampaignsAsync();
 
-        // Standardized method for retrieving by ID
+        // The only ID we use = CampaignCustomId
+        Task<Campaign> GetCampaignByIdAsync(string campaignCustomId);
+
+        Task<bool> UpdateAsync(Campaign campaign);
+        Task<bool> DeleteAsync(string campaignCustomId);
         Task<Campaign> GetByIdAsync(string campaignId);
 
-        Task CreateAsync(Campaign campaign);
-        Task<bool> UpdateAsync(Campaign campaign);
-        Task<bool> DeleteAsync(string campaignId);
-        Task<Campaign> GetCampaignByIdAsync(string id);
-
         Task<string> GenerateCampaignCustomIdAsync();
-
+        Task<Campaign> GetLastCampaignAsync();
     }
 }

@@ -1,34 +1,42 @@
-﻿using ClickHealthBackend.Models;
+﻿using ClickHealthBackend.Data;
+using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
-using ClickHealthBackend.Data;
+using MongoDB.Bson;
 using MongoDB.Driver;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ClickHealthBackend.Repositories.Implementations
 {
     public class PatientInviteRepository : IPatientInviteRepository
     {
-        private readonly IMongoCollection<Patient> _invites;
+        private readonly IMongoCollection<PatientInvite> _collection;
 
         public PatientInviteRepository(MongoDbContext context)
         {
-            _invites = context.PatientInvite;
+            _collection = context.PatientInvites;
         }
 
-        public async Task CreateAsync(Patient invite) =>
-            await _invites.InsertOneAsync(invite);
-
-        public async Task<Patient> GetByInviteCodeAsync(string inviteCode) =>
-            await _invites.Find(i => i.InviteCode == inviteCode).FirstOrDefaultAsync();
-
-        public async Task<bool> UpdateAsync(Patient invite)
+        public async Task CreateAsync(PatientInvite invite)
         {
-            var result = await _invites.ReplaceOneAsync(i => i.Id == invite.Id, invite);
-            return result.IsAcknowledged && result.ModifiedCount > 0;
+            if (string.IsNullOrEmpty(invite.Id))
+                invite.Id = ObjectId.GenerateNewId().ToString();
+
+            await _collection.InsertOneAsync(invite);
         }
 
-        public async Task<IEnumerable<Patient>> GetAllAsync() =>
-            await _invites.Find(_ => true).ToListAsync();
+        public async Task<List<PatientInvite>> GetByCampaignIdAsync(string campaignId)
+        {
+            return await _collection.Find(x => x.CampaignId == campaignId).ToListAsync();
+        }
+
+        // ✔ FIXED IMPLEMENTATION
+        public async Task<PatientInvite> GetByPatientAndCampaignAsync(string patientCustomId, string campaignCustomId)
+        {
+            var filter = Builders<PatientInvite>.Filter.And(
+                Builders<PatientInvite>.Filter.Eq(x => x.PatientCustomId, patientCustomId),
+                Builders<PatientInvite>.Filter.Eq(x => x.CampaignId, campaignCustomId)
+            );
+
+            return await _collection.Find(filter).FirstOrDefaultAsync();
+        }
     }
 }

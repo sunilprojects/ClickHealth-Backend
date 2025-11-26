@@ -3,6 +3,7 @@ using ClickHealthBackend.Enums;
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
 using ClickHealthBackend.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -277,11 +278,11 @@ namespace ClickHealthBackend.Services.Implementations
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Email),
-                    new Claim(ClaimTypes.Role, user.Role.ToString()),
-                    new Claim(ClaimTypes.Email, user.Email),
-                    new Claim("UserId", user.UserId)
-                }),
+            new Claim(ClaimTypes.Name, user.Email),
+            new Claim(ClaimTypes.Role, user.Role.ToString()),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim("UserId", user.UserId)
+        }),
                 Expires = DateTime.UtcNow.AddHours(12),
                 Issuer = _jwtSettings.Issuer,
                 Audience = _jwtSettings.Audience,
@@ -294,6 +295,12 @@ namespace ClickHealthBackend.Services.Implementations
             return tokenHandler.WriteToken(token);
         }
 
-       
+
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _repo.GetByEmailAsync(email);
+        }
+
+
     }
 }

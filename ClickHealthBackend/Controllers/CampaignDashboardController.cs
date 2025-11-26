@@ -1,5 +1,4 @@
 ﻿using ClickHealthBackend.DTOs;
-
 using ClickHealthBackend.Repositories.Implementations;
 using ClickHealthBackend.Repositories.Interfaces;
 using ClickHealthBackend.Services.Interfaces;
@@ -13,12 +12,6 @@ namespace ClickHealthBackend.Controllers
     public class CampaignDashboardController : ControllerBase
     {
         private readonly ICampaignDashboardService _service;
-
-        public CampaignDashboardController(ICampaignDashboardService service)
-        {
-            _service = service;
-        }
-
         private readonly IContentRepository _contentRepository;
 
         private readonly IContentService contentService;
@@ -36,7 +29,6 @@ namespace ClickHealthBackend.Controllers
             var dashboard = await _service.GetMarketingDashboardAsync();
             return Ok(dashboard);
         }
-
 
         [HttpGet("approved")]
         public async Task<IActionResult> GetApprovedContent()

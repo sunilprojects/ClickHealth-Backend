@@ -1,12 +1,11 @@
 ﻿using ClickHealthBackend.Models;
 
-namespace ClickHealthBackend.Repositories.Interfaces
+namespace ClickHealthBackend.Repositories.Interface
 {
     public interface IPatientInviteRepository
     {
-        Task CreateAsync(Patient invite);
-        Task<Patient> GetByInviteCodeAsync(string inviteCode);
-        Task<bool> UpdateAsync(Patient invite);
-        Task<IEnumerable<Patient>> GetAllAsync();
+        Task CreateAsync(PatientInvite invite);
+        Task<PatientInvite> GetByPatientAndCampaignAsync(string pid, string cid);
+        Task UpdateAsync(PatientInvite invite);
     }
 }

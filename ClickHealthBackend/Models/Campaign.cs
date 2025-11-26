@@ -1,5 +1,4 @@
-﻿
-using ClickHealthBackend.Enums;
+﻿using ClickHealthBackend.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
@@ -24,6 +23,11 @@ namespace ClickHealthBackend.Models
         [BsonElement("therapy")]
         public string Therapy { get; set; }
 
+        [BsonElement("specialty")]
+
+        public string Specialty { get; set; }
+
+
         [BsonElement("cities")]
         public List<string> Cities { get; set; } = new();
 
@@ -43,7 +47,6 @@ namespace ClickHealthBackend.Models
         [BsonElement("status")]
         public CampaignStatus Status { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("createdBy_user_id")]
         public string CreatedByUserId { get; set; }
 
@@ -53,9 +56,10 @@ namespace ClickHealthBackend.Models
         [BsonElement("targetMetrics")]
         public BsonDocument TargetMetrics { get; set; }
 
-
         [BsonElement("contentIds")]
         public List<string> ContentIds { get; set; } = new();
+
+
 
     }
 }

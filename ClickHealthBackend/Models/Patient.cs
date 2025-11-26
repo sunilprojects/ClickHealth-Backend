@@ -7,37 +7,21 @@ namespace ClickHealthBackend.Models
     public class Patient
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.ObjectId)]   // <-- FIX HERE
         public string Id { get; set; }
 
-        [BsonElement("inviteCode")]
-        public string InviteCode { get; set; }
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("hcpUserId")]
-        public string HcpUserId { get; set; }
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("contentId")]
-        public string ContentId { get; set; }
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("campaignId")]
-        public string CampaignId { get; set; }
-
-        [BsonElement("expiresAt")]
-        public DateTime ExpiresAt { get; set; }
-
-        [BsonElement("isActive")]
-        public bool IsActive { get; set; }
-
-        [BsonElement("maxUses")]
-        public int MaxUses { get; set; }
-
-        [BsonElement("usedCount")]
-        public int UsedCount { get; set; }
-
-        [BsonElement("shareChannel")]
+        public string PatientCustomId { get; set; }
+        public string Phone { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string City { get; set; }
+        public string Specialty { get; set; }
+        public string HcpId { get; set; }
         public string ShareChannel { get; set; }
+        public string Age { get; set; }
+        public string Gender { get; set; }
+        public string Condition { get; set; }
+        public string Language { get; set; }
     }
+
 }

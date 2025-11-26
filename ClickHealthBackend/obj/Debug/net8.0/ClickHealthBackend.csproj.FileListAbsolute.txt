@@ -1,351 +1,56 @@
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.endpoints.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.sourcelink.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\DIVYA\Desktop\ClickHealth\click-health-backend\ClickHealthBackend\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.runtime.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.endpoints.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Users\LENOVO\source\repos\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.sourcelink.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
-C:\Users\LENOVO\source\repos\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.runtime.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.endpoints.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.sourcelink.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
-C:\Backend-clickhealth\click-health-backend\ClickHealthBackend\ClickHealthBackend 2\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.runtime.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets\msbuild.ClickHealthBackend.Microsoft.AspNetCore.StaticWebAssets.props
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets\msbuild.build.ClickHealthBackend.props
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClickHealthBackend.props
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClickHealthBackend.props
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.pack.json
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
-D:\MyWorkPlace\nov_11_cursor\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.runtime.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.endpoints.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfoInputs.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.AssemblyInfo.cs
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.CoreCompileInputs.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
-D:\nov_12_codes\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
-D:\nov_12_codes\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\appsettings.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.runtime.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.staticwebassets.endpoints.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.exe
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.deps.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.runtimeconfig.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ClickHealthBackend.pdb
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\DnsClient.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\EPPlus.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Google.Authenticator.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Otp.NET.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\QRCoder.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Snappier.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\System.Xml.XPath.XmlDocument.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.csproj.AssemblyReference.cache
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.GeneratedMSBuildEditorConfig.editorconfig
@@ -355,6 +60,40 @@ C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\ne
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.sourcelink.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\scopedcss\bundle\ClickHealthBackend.styles.css
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHea.7B038F3E.Up2Date
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.dll
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\refint\ClickHealthBackend.dll
 C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.pdb
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ClickHealthBackend.genruntimeconfig.cache
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\obj\Debug\net8.0\ref\ClickHealthBackend.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\BrowserDebugHost.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\BrowserDebugProxy.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.FileFormats.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.NET.WebAssembly.Webcil.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Microsoft.SymbolStore.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\BlazorDebugProxy\Newtonsoft.Json.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Components.WebAssembly.Server.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\LENOVO\source\repos\ClickHealth-Backend\ClickHealthBackend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

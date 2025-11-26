@@ -6,6 +6,7 @@
         public string CampaignId { get; set; }
 
         public string CampaignCustomId { get; set; }
+
         public string Name { get; set; }
         public string Therapy { get; set; }
         public List<string> Cities { get; set; }
@@ -16,7 +17,10 @@
         public string CreatedByUserId { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // CRITICAL FIX: Use a simple C# Dictionary instead of BsonDocument
+        public List<string> ContentIds { get; set; }
+
+        public string Status { get; set; }
+
         public Dictionary<string, object> TargetMetrics { get; set; }
     }
 }

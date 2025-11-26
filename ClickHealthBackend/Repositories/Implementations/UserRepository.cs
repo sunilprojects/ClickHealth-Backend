@@ -1,6 +1,7 @@
 ﻿using ClickHealthBackend.Enums;
 using ClickHealthBackend.Models;
 using ClickHealthBackend.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace ClickHealthBackend.Repositories.Implementations
         public async Task<User?> GetByIdAsync(string id) =>
             await _usersCollection.Find(u => u.UserId == id).FirstOrDefaultAsync();
 
-        public async Task<User?> GetByEmailAsync(string email) =>
-            await _usersCollection.Find(u => u.Email == email).FirstOrDefaultAsync();
-
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return null;
+            return await _usersCollection.Find(u => u.Email.ToLower() == email.ToLower()).FirstOrDefaultAsync();
+        }
         public async Task<List<User>> GetPendingUsersAsync() =>
             await _usersCollection.Find(u => u.IsApproved == false).ToListAsync();
 
@@ -38,7 +41,6 @@ namespace ClickHealthBackend.Repositories.Implementations
         public async Task<bool> ExistsAsync(string email) =>
             await _usersCollection.Find(u => u.Email == email).AnyAsync();
 
-        // Optional: Approve user by updating password and isApproved
         public async Task<bool> ApproveUserAsync(string email, string hashedPassword)
         {
             var update = Builders<User>.Update
@@ -49,8 +51,6 @@ namespace ClickHealthBackend.Repositories.Implementations
             return result.ModifiedCount > 0;
         }
 
-
-
         public async Task<List<User>> GetUsersByStatusAsync(UserStatus status)
         {
             return await _usersCollection
@@ -59,11 +59,8 @@ namespace ClickHealthBackend.Repositories.Implementations
         }
 
         public async Task<List<User>> GetAllAsync() =>
-    await _usersCollection.Find(_ => true).ToListAsync();
+            await _usersCollection.Find(_ => true).ToListAsync();
 
-
-    
-   
         public async Task<string> GenerateCustomIdAsync(string prefix)
         {
             var sort = Builders<User>.Sort.Descending(x => x.UserCustomId);
@@ -91,9 +88,6 @@ namespace ClickHealthBackend.Repositories.Implementations
             return $"{prefix}{nextNumber:D3}";
         }
 
-
-
-
-
+     
     }
 }

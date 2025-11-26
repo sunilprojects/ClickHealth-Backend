@@ -1,4 +1,16 @@
+wwwroot\uploads\pdf\44501c63-f059-4f79-83a7-f6781c919cf4_IE010S250632971.pdf
 wwwroot\uploads\pdf\457d6e11-4924-4457-9673-aa006bdf13ae_Java Day4.pptx
-wwwroot\uploads\video\07a26390-01d8-4d84-b264-abb4b8a32e0c_[iSongs.info] 02 - Dole Dole.mp3
+wwwroot\uploads\pdf\53f7644e-84eb-4131-bbb0-6e4ea997ae71_Click Health BRD 1.pdf
+wwwroot\uploads\pdf\63461435-b02e-4222-a6eb-27b73666e00c_Click Health BRD 1.pdf
+wwwroot\uploads\pdf\7a791708-7c79-4ff2-80df-36ad22e50d8b_Click Health BRD 1.pdf
+wwwroot\uploads\pdf\a30c3450-f609-4258-ac91-be23fa12ab72_Click Health BRD 1.pdf
+wwwroot\uploads\pdf\bc499069-98c3-498a-9c27-864b248d85ba_IE010S250632971.pdf
 wwwroot\uploads\pdf\f4d29b53-09f3-4a74-a531-a471fe2e3318_Documents pdf.pdf
+wwwroot\uploads\video\07a26390-01d8-4d84-b264-abb4b8a32e0c_[iSongs.info] 02 - Dole Dole.mp3
 wwwroot\uploads\video\1f9d0b35-961e-48a6-a228-441a083b52f2_WhatsApp Video 2025-04-08 at 12.07.40 PM.mp4
+wwwroot\uploads\video\27d04bf3-e98a-445c-88d8-adb841e40dc5_CD001.mp4
+wwwroot\uploads\video\3934b4eb-df77-479a-847a-57bf40230b93_WhatsApp Video 2025-04-08 at 12.07.40 PM.mp4
+wwwroot\uploads\video\99212eb3-c561-43d6-89fa-aaa4fab433a1_3195444-uhd_3840_2160_25fps.mp4
+wwwroot\uploads\video\c9715e94-0aa0-49b4-bc87-907830f18e9f_CD001.mp4
+wwwroot\uploads\video\d8d2f614-e086-47e6-a5c7-82f931eabeba_CD001.mp4
+wwwroot\uploads\video\f673270a-e15c-498b-9105-d61155efb478_CD001.mp4
